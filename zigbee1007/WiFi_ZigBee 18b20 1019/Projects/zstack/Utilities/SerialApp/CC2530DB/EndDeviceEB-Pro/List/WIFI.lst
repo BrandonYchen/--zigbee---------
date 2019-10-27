@@ -1,0 +1,896 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         07/Oct/2019  19:05:17 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zig #
+#                          Bee wen 923\Projects\zstack\Utilities\SerialApp\So #
+#                          urce\WIFI.C                                        #
+#    Command line       =  -f "C:\Users\Administrator\Desktop\zigbee1006\WiFi #
+#                          _ZigBee wen 923\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"   #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"     #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\S #
+#                          ource\WIFI.C" -D ZIGBEEPRO -D NWK_AUTO_POLL -D     #
+#                          HAL_UART=TRUE -D SERIAL_APP_PORT=0 -D              #
+#                          LCD_SUPPORTED -D xPOWER_SAVING -lC                 #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\EndDeviceEB-Pro\List\" -lA                 #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\EndDeviceEB-Pro\List\" --diag_suppress     #
+#                          Pe001,Pa010 -o "C:\Users\Administrator\Desktop\zig #
+#                          bee1006\WiFi_ZigBee wen 923\Projects\zstack\Utilit #
+#                          ies\SerialApp\CC2530DB\EndDeviceEB-Pro\Obj\" -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 8 -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\" -I "C:\Users\Administrator\Desktop\zigbe #
+#                          e1006\WiFi_ZigBee wen 923\Projects\zstack\Utilitie #
+#                          s\SerialApp\CC2530DB\..\SOURCE\" -I                #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\ZMAIN\TI2530DB\" -I               #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\MT\" -I          #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\"    #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1006\WiFi #
+#                          _ZigBee wen 923\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC #
+#                          2530EB\" -I "C:\Users\Administrator\Desktop\zigbee #
+#                          1006\WiFi_ZigBee wen 923\Projects\zstack\Utilities #
+#                          \SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL #
+#                          \MCU\CCSOC\" -I "C:\Users\Administrator\Desktop\zi #
+#                          gbee1006\WiFi_ZigBee wen                           #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\. #
+#                          .\..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I         #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\" -I    #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" -I   #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" -I   #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\" -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" -I   #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" -I   #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\" -I    #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I        #
+#                          "C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zi #
+#                          gBee wen 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\" #
+#                           -I "C:\Users\Administrator\Desktop\zigbee1006\WiF #
+#                          i_ZigBee wen 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDA #
+#                          TA\" -I "C:\Users\Administrator\Desktop\zigbee1006 #
+#                          \WiFi_ZigBee wen 923\Projects\zstack\Utilities\Ser #
+#                          ialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCL #
+#                          UDE\" -I "C:\Users\Administrator\Desktop\zigbee100 #
+#                          6\WiFi_ZigBee wen 923\Projects\zstack\Utilities\Se #
+#                          rialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIG #
+#                          H_LEVEL\" -I "C:\Users\Administrator\Desktop\zigbe #
+#                          e1006\WiFi_ZigBee wen 923\Projects\zstack\Utilitie #
+#                          s\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC #
+#                          \LOW_LEVEL\srf04\" -I "C:\Users\Administrator\Desk #
+#                          top\zigbee1006\WiFi_ZigBee wen                     #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\. #
+#                          .\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGL #
+#                          E_CHIP\" -Ohz                                      #
+#    List file          =  C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zig #
+#                          Bee wen 923\Projects\zstack\Utilities\SerialApp\CC #
+#                          2530DB\EndDeviceEB-Pro\List\WIFI.lst               #
+#    Object file        =  C:\Users\Administrator\Desktop\zigbee1006\WiFi_Zig #
+#                          Bee wen 923\Projects\zstack\Utilities\SerialApp\CC #
+#                          2530DB\EndDeviceEB-Pro\Obj\WIFI.r51                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\zigbee1006\WiFi_ZigBee wen 923\Projects\zstack\Utilities\SerialApp\Source\WIFI.C
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "OnBoard.h"
+      3          #include <stdio.h>
+      4          #include <string.h>
+      5          
+      6          #include "AF.h"
+      7          #include "OnBoard.h"
+      8          #include "OSAL_Tasks.h"
+      9          #include "SerialApp.h"
+     10          #include "ZDApp.h"
+     11          #include "ZDObject.h"
+     12          #include "ZDProfile.h"
+     13          
+     14          #include "hal_drivers.h"
+     15          #include "hal_key.h"
+     16          //#if defined ( LCD_SUPPORTED )
+     17          #include "hal_lcd.h"
+     18          //#endif
+     19          #include "hal_led.h"
+     20          #include "hal_uart.h"
+     21          
+     22          #include "DHT11.h"
+     23          #include "nwk_globals.h"
+     24          #include "WIFI.H"
+     25          
+     26          #include "SerialApp.h"
+     27          
+     28          //函数
+     29          void clearBuff(void);
+     30          void SetWifi(void);
+     31          void dispIGTState(void);
+     32          void Init_ESP8266(void);
+     33          void Wifi_Rst(void);
+     34          void Connect_Wifi(void);
+     35          void Init_MUX(void);
+     36          void Init_Server(void);
+     37          int Send_Wifi_DATA(char *str, int len);
+     38          
+     39          void Init_Wifi(void);
+     40          
+     41          //命令
+     42          #define AT_C      "AT\r\n"
+     43          #define MUX_C     "AT+CIPMUX=1\r\n"
+     44          #define SERVER_C  "AT+CIPSERVER=1,5000\r\n"
+     45          #define RST_C "AT+RST\r\n"
+     46          
+     47          //收到数据判断
+     48          #define Rev_F "ESP" 
+     49          
+     50          
+     51          #define Rev_TUL "UNLINX"
+     52          #define Rev_TLI "LINK"
+     53          #define Rev_GD "GETDATA"
+     54          #define Rev_TUL1 "Unlink"
+     55          
+     56          //////////////////////////
+     57          #define IGT P0_6       // P0.6口控制IGT
+     58          
+     59          /****************************************************************************
+     60          * 名    称: clearBuff()
+     61          * 功    能: 清空接收缓冲区函数
+     62          * 入口参数: 无
+     63          * 出口参数: 无
+     64          ****************************************************************************/
+     65          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     66          void clearBuff(void)
+   \                     clearBuff:
+     67          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     68            for(jj=0;jj<128;jj++)
+   \   000004   90....       MOV     DPTR,#jj
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+     69            {
+     70              Recdata[jj]=0x00;
+   \   000009   90....       MOV     DPTR,#Recdata
+   \   00000C   7880         MOV     R0,#-0x80
+   \                     ??clearBuff_0:
+   \   00000E   F0           MOVX    @DPTR,A
+   \   00000F   A3           INC     DPTR
+   \   000010   D8FC         DJNZ    R0,??clearBuff_0
+     71            }
+     72            jj=0;
+   \   000012   90....       MOV     DPTR,#jj
+   \   000015   F0           MOVX    @DPTR,A
+     73          }
+   \   000016   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     74          
+     75          /****************************************************************************
+     76          * 名    称: SetWifi()
+     77          * 功    能: 设置LED灯相应的IO口
+     78          * 入口参数: 无
+     79          * 出口参数: 无
+     80          ****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     81          void SetWifi(void)
+   \                     SetWifi:
+     82          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     83            P0DIR |= 0x40;           //P0.6定义为输出
+   \   000004   43FD40       ORL     0xfd,#0x40
+     84            IGT = 1;                 //高电平复位
+   \   000007   D286         SETB    0x80.6
+     85            Delay_ms(100);
+   \   000009                ; Setup parameters for call to function Delay_ms
+   \   000009   7A64         MOV     R2,#0x64
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??Delay_ms?relay
+     86            IGT = 0;                 //低电平工作
+   \   000010   C286         CLR     0x80.6
+     87          }
+   \   000012   80..         SJMP    ?Subroutine0
+   \   000014                REQUIRE P0DIR
+   \   000014                REQUIRE _A_P0
+     88          
+     89          
+     90          /****************************************************************************
+     91          * 名    称: dispIGTState()
+     92          * 功    能: 检测到wifi模块的启动或者停止
+     93          * 入口参数: 无
+     94          * 出口参数: 无
+     95          ****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     96          void dispIGTState(void)
+   \                     dispIGTState:
+     97          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     98            if(IGT>0) //监测WIFI模块复位管脚
+   \   000004   A286         MOV     C,0x80.6
+   \   000006   7902         MOV     R1,#0x2
+   \   000008   5006         JNC     ??dispIGTState_0
+     99            {
+    100               HalLcdWriteString( "IGTH", HAL_LCD_LINE_2 );
+   \   00000A                ; Setup parameters for call to function HalLcdWriteString
+   \   00000A   7A..         MOV     R2,#`?<Constant "IGTH">` & 0xff
+   \   00000C   7B..         MOV     R3,#(`?<Constant "IGTH">` >> 8) & 0xff
+   \   00000E   8004         SJMP    ??dispIGTState_1
+    101            }
+    102            else
+    103            {
+    104              HalLcdWriteString( "IGTL", HAL_LCD_LINE_2 ); 
+   \                     ??dispIGTState_0:
+   \   000010                ; Setup parameters for call to function HalLcdWriteString
+   \   000010   7A..         MOV     R2,#`?<Constant "IGTL">` & 0xff
+   \   000012   7B..         MOV     R3,#(`?<Constant "IGTL">` >> 8) & 0xff
+   \                     ??dispIGTState_1:
+   \   000014   12....       LCALL   ??HalLcdWriteString?relay
+    105            }                
+    106          }
+   \   000017                REQUIRE ?Subroutine0
+   \   000017                REQUIRE _A_P0
+   \   000017                ; // Fall through to label ?Subroutine0
+    107          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    108          void Init_ESP8266(void)
+   \                     Init_ESP8266:
+    109          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    110            HalUARTWrite(0x00, "Init_ESP8266\r\n", strlen("Init_ESP8266\r\n"));
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7C0E         MOV     R4,#0xe
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A..         MOV     R2,#`?<Constant "Init_ESP8266\\r\\n">` & 0xff
+   \   00000A   7B..         MOV     R3,#(`?<Constant "Init_ESP8266\\r\\n">` >> 8) & 0xff
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ??HalUARTWrite?relay
+    111          }
+   \   000011   80..         SJMP    ?Subroutine0
+    112          
+    113          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    114          void Wifi_Rst(void)
+   \                     Wifi_Rst:
+    115          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    116          
+    117            clearBuff();
+   \   000004                ; Setup parameters for call to function clearBuff
+   \   000004   12....       LCALL   ??clearBuff?relay
+    118            HalUARTWrite(0x00, "AT+RST\r\n", 8);
+   \   000007                ; Setup parameters for call to function HalUARTWrite
+   \   000007   7C08         MOV     R4,#0x8
+   \   000009   7D00         MOV     R5,#0x0
+   \   00000B   7A..         MOV     R2,#`?<Constant "AT+RST\\r\\n">` & 0xff
+   \   00000D   7B..         MOV     R3,#(`?<Constant "AT+RST\\r\\n">` >> 8) & 0xff
+   \   00000F   7900         MOV     R1,#0x0
+   \   000011   12....       LCALL   ??HalUARTWrite?relay
+    119           
+    120            Delay_ms(100);
+   \   000014                ; Setup parameters for call to function Delay_ms
+   \   000014   7A64         MOV     R2,#0x64
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   12....       LCALL   ??Delay_ms?relay
+    121          /*
+    122            if(strstr((char const *)Recdata,"OK")==NULL)
+    123            {
+    124                HalLcdWriteString( "Wifi Reset....", HAL_LCD_LINE_2 );
+    125                 clearBuff();
+    126                 Delay_ms(5000);
+    127          
+    128            }
+    129            else
+    130            {
+    131                HalLcdWriteString("Wifi Reset[OK]", HAL_LCD_LINE_2);
+    132                 clearBuff();
+    133                 Delay_ms(5000);
+    134            }
+    135                */
+    136          }
+   \   00001B   80..         SJMP    ?Subroutine0
+    137          
+    138          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    139          void Connect_Wifi(void)
+   \                     Connect_Wifi:
+    140          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    141            
+    142            clearBuff();
+   \   000005                ; Setup parameters for call to function clearBuff
+   \   000005   12....       LCALL   ?Subroutine3 & 0xFFFF
+    143          //  Print_Str(AT_C);
+    144            HalUARTWrite (0x00, AT_C, strlen(AT_C));
+    145             Delay_ms(50);
+   \                     ??CrossCallReturnLabel_2:
+   \   000008                ; Setup parameters for call to function Delay_ms
+   \   000008   7A32         MOV     R2,#0x32
+   \   00000A   7B00         MOV     R3,#0x0
+   \   00000C   12....       LCALL   ??Delay_ms?relay
+   \   00000F   800C         SJMP    ??CrossCallReturnLabel_3
+    146           
+    147           /* 
+    148            if(strstr((char const *)Recdata,"OK")==NULL)
+    149            {
+    150                HalLcdWriteString( "connect.......", HAL_LCD_LINE_2 );
+    151                Delay_ms(500);
+    152            }
+    153            else
+    154            {
+    155                HalLcdWriteString("connect...[OK]", HAL_LCD_LINE_2);
+    156                Delay_ms(500);
+    157            } */
+    158            while(strstr((char const *)Recdata,"OK")==NULL)
+    159            {
+    160          //    LED1=1;
+    161          //    DelayMS(500);
+    162          //    LED1=0;
+    163          //    LCD_P8x16Str(8,2,"connect.......");
+    164              HalLcdWriteString( "connect.......", HAL_LCD_LINE_2 );
+   \                     ??Connect_Wifi_0:
+   \   000011                ; Setup parameters for call to function HalLcdWriteString
+   \   000011   7902         MOV     R1,#0x2
+   \   000013   7A..         MOV     R2,#`?<Constant "connect.......">` & 0xff
+   \   000015   7B..         MOV     R3,#(`?<Constant "connect.......">` >> 8) & 0xff
+   \   000017   12....       LCALL   ??HalLcdWriteString?relay
+    165              clearBuff();
+   \   00001A                ; Setup parameters for call to function clearBuff
+   \   00001A   12....       LCALL   ?Subroutine3 & 0xFFFF
+    166           //   Print_Str(AT_C);
+    167              HalUARTWrite (0x00, AT_C, strlen(AT_C));
+    168           //   DelayMS(500);
+    169            } 
+   \                     ??CrossCallReturnLabel_3:
+   \   00001D                ; Setup parameters for call to function strstr
+   \   00001D   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000020   60EF         JZ      ??Connect_Wifi_0
+    170           // LCD_P8x16Str(8,2,"connect...[OK]");
+    171          //  HalLcdWriteString( "connect...[OK]", HAL_LCD_LINE_2 );
+    172           // LED1=0;
+    173            
+    174          }
+   \   000022   80..         SJMP    ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??clearBuff?relay
+   \   000003                ; Setup parameters for call to function HalUARTWrite
+   \   000003                ; Setup parameters for call to function HalUARTWrite
+   \   000003   7C04         MOV     R4,#0x4
+   \   000005   7D00         MOV     R5,#0x0
+   \   000007   7A..         MOV     R2,#`?<Constant "AT\\r\\n">` & 0xff
+   \   000009   7B..         MOV     R3,#(`?<Constant "AT\\r\\n">` >> 8) & 0xff
+   \   00000B   7900         MOV     R1,#0x0
+   \   00000D   12....       LCALL   ??HalUARTWrite?relay
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   7C..         MOV     R4,#`?<Constant "OK">` & 0xff
+   \   000002   7D..         MOV     R5,#(`?<Constant "OK">` >> 8) & 0xff
+   \   000004   7A..         MOV     R2,#Recdata & 0xff
+   \   000006   7B..         MOV     R3,#(Recdata >> 8) & 0xff
+   \   000008   12....       LCALL   ??strstr?relay
+   \   00000B   8B..         MOV     ?V0 + 1,R3
+   \   00000D   EA           MOV     A,R2
+   \   00000E   45..         ORL     A,?V0 + 1
+   \   000010   22           RET
+    175          
+    176          
+    177          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    178          void Init_MUX(void)
+   \                     Init_MUX:
+    179          { 
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    180            clearBuff();
+   \   000005                ; Setup parameters for call to function clearBuff
+   \   000005   12....       LCALL   ??clearBuff?relay
+    181          //  Print_Str(MUX_C);
+    182            HalUARTWrite (0x00, MUX_C, strlen(MUX_C));
+   \   000008                ; Setup parameters for call to function HalUARTWrite
+   \   000008   7C0D         MOV     R4,#0xd
+   \   00000A   7D00         MOV     R5,#0x0
+   \   00000C   7A..         MOV     R2,#`?<Constant "AT+CIPMUX=1\\r\\n">` & 0xff
+   \   00000E   7B..         MOV     R3,#(`?<Constant "AT+CIPMUX=1\\r\\n">` >> 8) & 0xff
+   \   000010   12....       LCALL   ?Subroutine2 & 0xFFFF
+    183             Delay_ms(50);
+    184            
+    185              if(strstr((char const *)Recdata,"OK")==NULL)
+   \                     ??CrossCallReturnLabel_0:
+   \   000013   7006         JNZ     ??Init_MUX_0
+    186            {
+    187                HalLcdWriteString( "Init MUX.......", HAL_LCD_LINE_2 );
+   \   000015                ; Setup parameters for call to function HalLcdWriteString
+   \   000015   7A..         MOV     R2,#`?<Constant "Init MUX.......">` & 0xff
+   \   000017   7B..         MOV     R3,#(`?<Constant "Init MUX.......">` >> 8) & 0xff
+   \   000019   8004         SJMP    ??Init_MUX_1
+    188                Delay_ms(500);
+    189            }
+    190            else
+    191            {
+    192                HalLcdWriteString("Init MUX...[OK]", HAL_LCD_LINE_2);
+   \                     ??Init_MUX_0:
+   \   00001B                ; Setup parameters for call to function HalLcdWriteString
+   \   00001B   7A..         MOV     R2,#`?<Constant "Init MUX...[OK]">` & 0xff
+   \   00001D   7B..         MOV     R3,#(`?<Constant "Init MUX...[OK]">` >> 8) & 0xff
+    193                Delay_ms(500);
+    194            }
+   \                     ??Init_MUX_1:
+   \   00001F                REQUIRE ?Subroutine1
+   \   00001F                ; // Fall through to label ?Subroutine1
+    195          /*  
+    196            while(strstr((char const *)Recdata,"OK")==NULL)
+    197            {
+    198          //    LED2=1;
+    199              DelayMS(500);
+    200           //   LED2=0;
+    201           //   LCD_P8x16Str(8,2,"Init MUX......");
+    202              HalLcdWriteString( "Init MUX......", HAL_LCD_LINE_2 );
+    203              clearBuff();
+    204          //    Print_Str(MUX_C);
+    205              HalUARTWrite (0x00, MUX_C, strlen(MUX_C));
+    206              DelayMS(500);
+    207            }
+    208          //  LCD_P8x16Str(8,2,"Init MUX..[OK]");
+    209            HalLcdWriteString( "Init MUX..[OK]", HAL_LCD_LINE_2 );
+    210          //  LED2=0;
+    211            */
+    212          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ??HalLcdWriteString?relay
+   \   000003                ; Setup parameters for call to function Delay_ms
+   \   000003                ; Setup parameters for call to function Delay_ms
+   \   000003   7AF4         MOV     R2,#-0xc
+   \   000005   7B01         MOV     R3,#0x1
+   \   000007   12....       LCALL   ??Delay_ms?relay
+   \   00000A                REQUIRE ??Subroutine5_0
+   \   00000A                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   12....       LCALL   ??HalUARTWrite?relay
+   \   000005                ; Setup parameters for call to function Delay_ms
+   \   000005                ; Setup parameters for call to function Delay_ms
+   \   000005   7A32         MOV     R2,#0x32
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   12....       LCALL   ??Delay_ms?relay
+   \   00000C                ; Setup parameters for call to function strstr
+   \   00000C                ; Setup parameters for call to function strstr
+   \   00000C   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00000F   7902         MOV     R1,#0x2
+   \   000011   22           RET
+    213          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    214          void Init_Server(void)
+   \                     Init_Server:
+    215          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    216            
+    217            
+    218            clearBuff();
+   \   000005                ; Setup parameters for call to function clearBuff
+   \   000005   12....       LCALL   ??clearBuff?relay
+    219          //  Print_Str(SERVER_C);
+    220            HalUARTWrite (0x00,SERVER_C, strlen(SERVER_C));
+   \   000008                ; Setup parameters for call to function HalUARTWrite
+   \   000008   7C15         MOV     R4,#0x15
+   \   00000A   7D00         MOV     R5,#0x0
+   \   00000C   7A..         MOV     R2,#`?<Constant "AT+CIPSERVER=1,5000\\r\\n">` & 0xff
+   \   00000E   7B..         MOV     R3,#(`?<Constant "AT+CIPSERVER=1,5000\\r\\n">` >> 8) & 0xff
+   \   000010   12....       LCALL   ?Subroutine2 & 0xFFFF
+    221             Delay_ms(50);
+    222           
+    223            if(strstr((char const *)Recdata,"OK")==NULL)
+   \                     ??CrossCallReturnLabel_1:
+   \   000013   7006         JNZ     ??Init_Server_0
+    224            {
+    225                HalLcdWriteString( "Init Server.......", HAL_LCD_LINE_2 );
+   \   000015                ; Setup parameters for call to function HalLcdWriteString
+   \   000015   7A..         MOV     R2,#`?<Constant "Init Server.......">` & 0xff
+   \   000017   7B..         MOV     R3,#(`?<Constant "Init Server.......">` >> 8) & 0xff
+   \   000019   8004         SJMP    ??Init_Server_1
+    226            Delay_ms(500);
+    227            }
+    228            else
+    229            {
+    230                HalLcdWriteString("Init Server...[OK]", HAL_LCD_LINE_2);
+   \                     ??Init_Server_0:
+   \   00001B                ; Setup parameters for call to function HalLcdWriteString
+   \   00001B   7A..         MOV     R2,#`?<Constant "Init Server...[OK]">` & 0xff
+   \   00001D   7B..         MOV     R3,#(`?<Constant "Init Server...[OK]">` >> 8) & 0xff
+    231           Delay_ms(500);
+    232            }
+   \                     ??Init_Server_1:
+   \   00001F   80..         SJMP    ?Subroutine1
+    233            
+    234          /*  
+    235            while(strstr((char const *)Recdata,"OK")==NULL)
+    236            {
+    237           //   LED3=1;
+    238              DelayMS(500);
+    239          //    LED3=0;
+    240          //    LCD_P8x16Str(8,2,"Init Server...");
+    241           HalLcdWriteString( "Init Server...", HAL_LCD_LINE_2 );   
+    242              clearBuff();
+    243          //    Print_Str(SERVER_C);
+    244              HalUARTWrite (0x00,SERVER_C, strlen(SERVER_C));
+    245              DelayMS(500);
+    246            }
+    247          //  LCD_P8x16Str(8,2,"TCP Server[OK]");
+    248            HalLcdWriteString( "TCP Server[OK]", HAL_LCD_LINE_2 );
+    249          //  LED3=0;*/
+    250          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??clearBuff?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    clearBuff
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SetWifi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SetWifi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??dispIGTState?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    dispIGTState
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_ESP8266?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_ESP8266
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Wifi_Rst?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Wifi_Rst
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Connect_Wifi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Connect_Wifi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_MUX?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_MUX
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_Server?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_Server
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "IGTH">`:
+   \   000000   49475448     DB "IGTH"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "IGTL">`:
+   \   000000   4947544C     DB "IGTL"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Init_ESP8266\\r\\n">`:
+   \   000000   496E6974     DB "Init_ESP8266\015\012"
+   \            5F455350
+   \            38323636
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+RST\\r\\n">`:
+   \   000000   41542B52     DB "AT+RST\015\012"
+   \            53540D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT\\r\\n">`:
+   \   000000   41540D0A     DB "AT\015\012"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "connect.......">`:
+   \   000000   636F6E6E     DB "connect......."
+   \            6563742E
+   \            2E2E2E2E
+   \            2E2E00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "OK">`:
+   \   000000   4F4B00       DB "OK"
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CIPMUX=1\\r\\n">`:
+   \   000000   41542B43     DB "AT+CIPMUX=1\015\012"
+   \            49504D55
+   \            583D310D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Init MUX.......">`:
+   \   000000   496E6974     DB "Init MUX......."
+   \            204D5558
+   \            2E2E2E2E
+   \            2E2E2E00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Init MUX...[OK]">`:
+   \   000000   496E6974     DB "Init MUX...[OK]"
+   \            204D5558
+   \            2E2E2E5B
+   \            4F4B5D00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CIPSERVER=1,5000\\r\\n">`:
+   \   000000   41542B43     DB "AT+CIPSERVER=1,5000\015\012"
+   \            49505345
+   \            52564552
+   \            3D312C35
+   \            3030300D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Init Server.......">`:
+   \   000000   496E6974     DB "Init Server......."
+   \            20536572
+   \            7665722E
+   \            2E2E2E2E
+   \            2E2E00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Init Server...[OK]">`:
+   \   000000   496E6974     DB "Init Server...[OK]"
+   \            20536572
+   \            7665722E
+   \            2E2E5B4F
+   \            4B5D00  
+    251          
+    252          /*
+    253          int Send_Wifi_DATA(char *str, int len)
+    254          {
+    255            char SEND_C[20];
+    256            memset(SEND_C,0,20);
+    257            sprintf(SEND_C,"AT+CIPSEND=%d,%d\r\n",g_thread,len);
+    258            
+    259            Print_Str(SEND_C);
+    260            DelayMS(50);
+    261            
+    262            while(strstr((char const *)Recdata,">")==NULL)
+    263            {
+    264              if(g_timeout>50)
+    265              {
+    266                  g_timeout=0;
+    267                  return -1;
+    268              }
+    269              DelayMS(5);
+    270              g_timeout++;
+    271              
+    272            }
+    273            Print_Str(str);
+    274            return 0;
+    275          }
+    276          */
+    277          
+    278          /****************************************************************
+    279          主函数							
+    280          ****************************************************************/
+    281          
+    282          
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     Connect_Wifi               0      0     10
+       -> clearBuff             0      0     20
+       -> HalUARTWrite          0      0     20
+       -> Delay_ms              0      0     20
+       -> HalLcdWriteString     0      0     20
+       -> clearBuff             0      0     20
+       -> HalUARTWrite          0      0     20
+       -> strstr                0      0     20
+     Init_ESP8266               2      0      0
+       -> HalUARTWrite          4      0      0
+     Init_MUX                   0      0     10
+       -> clearBuff             0      0     20
+       -> HalUARTWrite          0      0     20
+       -> Delay_ms              0      0     20
+       -> strstr                0      0     20
+       -> HalLcdWriteString     0      0     20
+       -> Delay_ms              0      0     20
+       -> HalLcdWriteString     0      0     20
+       -> Delay_ms              0      0     20
+     Init_Server                0      0     10
+       -> clearBuff             0      0     20
+       -> HalUARTWrite          0      0     20
+       -> Delay_ms              0      0     20
+       -> strstr                0      0     20
+       -> HalLcdWriteString     0      0     20
+       -> Delay_ms              0      0     20
+       -> HalLcdWriteString     0      0     20
+       -> Delay_ms              0      0     20
+     SetWifi                    2      0      0
+       -> Delay_ms              4      0      0
+     Wifi_Rst                   2      0      0
+       -> clearBuff             4      0      0
+       -> HalUARTWrite          4      0      0
+       -> Delay_ms              4      0      0
+     clearBuff                  2      0     10
+     dispIGTState               2      0      0
+       -> HalLcdWriteString     4      0      0
+       -> HalLcdWriteString     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     _A_P0                                    1
+     P0DIR                                    1
+     clearBuff                               24
+     ?Subroutine0                             7
+     SetWifi                                 20
+     dispIGTState                            23
+     Init_ESP8266                            19
+     Wifi_Rst                                29
+     Connect_Wifi                            36
+     ?Subroutine3                            17
+     ??Subroutine5_0                          5
+     ?Subroutine4                            17
+     Init_MUX                                31
+     ?Subroutine1                            10
+     ?Subroutine2                            18
+     Init_Server                             33
+     ??clearBuff?relay                        6
+     ??SetWifi?relay                          6
+     ??dispIGTState?relay                     6
+     ??Init_ESP8266?relay                     6
+     ??Wifi_Rst?relay                         6
+     ??Connect_Wifi?relay                     6
+     ??Init_MUX?relay                         6
+     ??Init_Server?relay                      6
+     ?<Constant "IGTH">                       5
+     ?<Constant "IGTL">                       5
+     ?<Constant "Init_ESP8266\r\n">          15
+     ?<Constant "AT+RST\r\n">                 9
+     ?<Constant "AT\r\n">                     5
+     ?<Constant "connect.......">            15
+     ?<Constant "OK">                         3
+     ?<Constant "AT+CIPMUX=1\r\n">           14
+     ?<Constant "Init MUX.......">           16
+     ?<Constant "Init MUX...[OK]">           16
+     ?<Constant "AT+CIPSERVER=1,5000\r\n">   22
+     ?<Constant "Init Server.......">        19
+     ?<Constant "Init Server...[OK]">        19
+
+ 
+ 289 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+ 163 bytes in segment XDATA_ROM_C
+ 
+ 337 bytes of CODE  memory
+ 163 bytes of CONST memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

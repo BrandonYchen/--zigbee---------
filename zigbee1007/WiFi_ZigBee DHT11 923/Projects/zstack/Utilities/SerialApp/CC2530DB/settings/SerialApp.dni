@@ -1,0 +1,60 @@
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1560124786
+[InstructionProfiling]
+Enabled=_ 0
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\SerialApp.c}.674.21@1" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Source\SerialApp.c}.720.20@1" 0 0 0 0 "" 0 ""
+Count=2
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "C:\Users\17276\Desktop\WiFi_ZigBee wen 923\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A1=_ "C:\Users\17276\Desktop\WiFi_ZigBee wen 923\Components\zmac\f8w\zmac.c" ""
+A2=_ "C:\Users\17276\Desktop\WiFi_ZigBee wen 923\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A3=_ "C:\Users\17276\Desktop\WiFi_ZigBee\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A4=_ "C:\Users\17276\Desktop\WiFi_ZigBee\Components\zmac\f8w\zmac.c" ""
+A5=_ "C:\Users\17276\Desktop\WiFi_ZigBee\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A6=_ "E:\data\zigbee网关开发板V3.4\8.代码及其教程\6.终结篇-ZigBee网关带协议栈采集控制\WiFi_ZigBee\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A7=_ "E:\data\zigbee网关开发板V3.4\8.代码及其教程\6.终结篇-ZigBee网关带协议栈采集控制\WiFi_ZigBee\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A8=_ "E:\zigbee开发板v5.0\WSN_ZigBee(gateway)\WSN_ZigBee\Projects\zstack\Utilities\SerialApp\Source\SerialApp.c" ""
+A9=_ "E:\zigbee开发板v5.0\WSN_ZigBee(gateway)\WSN_ZigBee\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=10
+SuppressDialog=0

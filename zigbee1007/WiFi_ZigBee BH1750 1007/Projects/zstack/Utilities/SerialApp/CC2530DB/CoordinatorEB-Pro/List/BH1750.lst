@@ -1,0 +1,949 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         13/Oct/2019  16:20:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee light 1007\Projects\zstack\Utilities\SerialApp #
+#                          \Source\BH1750.c                                   #
+#    Command line       =  -f "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee light 1007\Projects\zstack\Utilities\Seria #
+#                          lApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg #
+#                          " (-DCPU32MHZ -DROOT=__near_func                   #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"  #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\Source\BH1750.c" -D ZIGBEEPRO -D HAL_UART=TRUE   #
+#                          -D SERIAL_APP_PORT=0 -D LCD_SUPPORTED -D           #
+#                          NV_RESTORE -lC "C:\Users\Administrator\Desktop\zig #
+#                          bee1007\WiFi_ZigBee light                          #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          CoordinatorEB-Pro\List\" -lA                       #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\CoordinatorEB-Pro\List\"                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\CoordinatorEB-Pro\Obj\" -e --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I "C:\Users\Administrator\Des #
+#                          ktop\zigbee1007\WiFi_ZigBee light                  #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          " -I "C:\Users\Administrator\Desktop\zigbee1007\Wi #
+#                          Fi_ZigBee light 1007\Projects\zstack\Utilities\Ser #
+#                          ialApp\CC2530DB\..\SOURCE\" -I                     #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I            #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\" #
+#                           -I "C:\Users\Administrator\Desktop\zigbee1007\WiF #
+#                          i_ZigBee light 1007\Projects\zstack\Utilities\Seri #
+#                          alApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGE #
+#                          T\CC2530EB\" -I "C:\Users\Administrator\Desktop\zi #
+#                          gbee1007\WiFi_ZigBee light                         #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I      #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ #
+#                          " -I "C:\Users\Administrator\Desktop\zigbee1007\Wi #
+#                          Fi_ZigBee light 1007\Projects\zstack\Utilities\Ser #
+#                          ialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF #
+#                          \" -I "C:\Users\Administrator\Desktop\zigbee1007\W #
+#                          iFi_ZigBee light 1007\Projects\zstack\Utilities\Se #
+#                          rialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N #
+#                          WK\" -I "C:\Users\Administrator\Desktop\zigbee1007 #
+#                          \WiFi_ZigBee light 1007\Projects\zstack\Utilities\ #
+#                          SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK #
+#                          \SEC\" -I "C:\Users\Administrator\Desktop\zigbee10 #
+#                          07\WiFi_ZigBee light 1007\Projects\zstack\Utilitie #
+#                          s\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STA #
+#                          CK\SAPI\" -I "C:\Users\Administrator\Desktop\zigbe #
+#                          e1007\WiFi_ZigBee light 1007\Projects\zstack\Utili #
+#                          ties\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SYS\" -I "C:\Users\Administrator\Desktop\zig #
+#                          bee1007\WiFi_ZigBee light                          #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\ZDO\" -I           #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"    #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee light 1007\Projects\zstack\Utilities\Seria #
+#                          lApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADD #
+#                          R\" -I "C:\Users\Administrator\Desktop\zigbee1007\ #
+#                          WiFi_ZigBee light 1007\Projects\zstack\Utilities\S #
+#                          erialApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC #
+#                          ES\SDATA\" -I "C:\Users\Administrator\Desktop\zigb #
+#                          ee1007\WiFi_ZigBee light                           #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\INCLUDE\" -I         #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee light 1007\Projects\zstack\Utilities\SerialAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVE #
+#                          L\" -I "C:\Users\Administrator\Desktop\zigbee1007\ #
+#                          WiFi_ZigBee light 1007\Projects\zstack\Utilities\S #
+#                          erialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO #
+#                          W_LEVEL\srf04\" -I "C:\Users\Administrator\Desktop #
+#                          \zigbee1007\WiFi_ZigBee light                      #
+#                          1007\Projects\zstack\Utilities\SerialApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SING #
+#                          LE_CHIP\" -Ohz                                     #
+#    List file          =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee light 1007\Projects\zstack\Utilities\SerialApp #
+#                          \CC2530DB\CoordinatorEB-Pro\List\BH1750.lst        #
+#    Object file        =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee light 1007\Projects\zstack\Utilities\SerialApp #
+#                          \CC2530DB\CoordinatorEB-Pro\Obj\BH1750.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\zigbee1007\WiFi_ZigBee light 1007\Projects\zstack\Utilities\SerialApp\Source\BH1750.c
+      1          #include "BH1750.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include "OnBoard.h"
+      3           
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      4          void halMcuWaitUs(uint16 usec)
+   \                     halMcuWaitUs:
+      5          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   800A         SJMP    ??halMcuWaitUs_0
+      6              while(usec--)
+      7              {
+      8                  asm("nop");
+   \                     ??halMcuWaitUs_1:
+   \   000002   00           nop
+      9                  asm("nop");
+   \   000003   00           nop
+     10                  asm("nop");
+   \   000004   00           nop
+     11                  asm("nop");
+   \   000005   00           nop
+     12                  asm("nop");
+   \   000006   00           nop
+     13                  asm("nop");
+   \   000007   00           nop
+     14                  asm("nop");
+   \   000008   00           nop
+     15                  asm("nop");
+   \   000009   00           nop
+     16                  asm("nop");
+   \   00000A   00           nop
+     17                  asm("nop");
+   \   00000B   00           nop
+     18              }
+   \                     ??halMcuWaitUs_0:
+   \   00000C   EA           MOV     A,R2
+   \   00000D   F8           MOV     R0,A
+   \   00000E   EB           MOV     A,R3
+   \   00000F   F9           MOV     R1,A
+   \   000010   E8           MOV     A,R0
+   \   000011   24FF         ADD     A,#-0x1
+   \   000013   1A           DEC     R2
+   \   000014   E9           MOV     A,R1
+   \   000015   34FF         ADDC    A,#-0x1
+   \   000017   FB           MOV     R3,A
+   \   000018   E8           MOV     A,R0
+   \   000019   49           ORL     A,R1
+   \   00001A   70E6         JNZ     ??halMcuWaitUs_1
+     19          }
+   \   00001C   02....       LJMP    ?BRET
+     20          //ÒÔmsÑÓÊ±
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     21          void halMcuWaitMs(uint16 msec)
+   \                     halMcuWaitMs:
+     22          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8007         SJMP    ??halMcuWaitMs_0
+     23              while(msec--)
+     24                  halMcuWaitUs(1000);
+   \                     ??halMcuWaitMs_1:
+   \   00000B                ; Setup parameters for call to function halMcuWaitUs
+   \   00000B   7AE8         MOV     R2,#-0x18
+   \   00000D   7B03         MOV     R3,#0x3
+   \   00000F   12....       LCALL   ??halMcuWaitUs?relay
+   \                     ??halMcuWaitMs_0:
+   \   000012   EE           MOV     A,R6
+   \   000013   F8           MOV     R0,A
+   \   000014   EF           MOV     A,R7
+   \   000015   F9           MOV     R1,A
+   \   000016   E8           MOV     A,R0
+   \   000017   24FF         ADD     A,#-0x1
+   \   000019   1E           DEC     R6
+   \   00001A   E9           MOV     A,R1
+   \   00001B   34FF         ADDC    A,#-0x1
+   \   00001D   FF           MOV     R7,A
+   \   00001E   E8           MOV     A,R0
+   \   00001F   49           ORL     A,R1
+   \   000020   70E9         JNZ     ??halMcuWaitMs_1
+     25          }
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?BANKED_LEAVE_XDATA
+     26           
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     27          void Delay_us()
+   \                     Delay_us:
+     28          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     29            halMcuWaitUs(1);
+   \   000004                ; Setup parameters for call to function halMcuWaitUs
+   \   000004   80..         SJMP    ??Subroutine6_0
+     30           // MicroWait(1);
+     31          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   7A01         MOV     R2,#0x1
+   \   000002                REQUIRE ??Subroutine7_0
+   \   000002                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ??halMcuWaitUs?relay
+   \   000005                REQUIRE ??Subroutine8_0
+   \   000005                ; // Fall through to label ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void Delay_5us()
+   \                     Delay_5us:
+     33          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     34            halMcuWaitUs(5);
+   \   000004                ; Setup parameters for call to function halMcuWaitUs
+   \   000004   7A05         MOV     R2,#0x5
+   \   000006   80..         SJMP    ??Subroutine7_0
+     35            //MicroWait(5);
+     36          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     37          void Delay_10us()
+   \                     Delay_10us:
+     38          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     39            halMcuWaitUs(10);
+   \   000004                ; Setup parameters for call to function halMcuWaitUs
+   \   000004   7A0A         MOV     R2,#0xa
+   \   000006   80..         SJMP    ??Subroutine7_0
+     40            //MicroWait(10);
+     41          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42          void Delay_ms(int n)
+   \                     Delay_ms:
+     43          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     44            halMcuWaitMs(n);
+   \   000004                ; Setup parameters for call to function halMcuWaitMs
+   \   000004   12....       LCALL   ??halMcuWaitMs?relay
+     45          }
+   \   000007   80..         SJMP    ??Subroutine8_0
+     46          /****************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7A01         MOV     R2,#0x1
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??halMcuWaitUs?relay
+   \   000007   C293         CLR     0x90.3
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                REQUIRE ??Subroutine6_0
+   \   000009                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          static void start_i2c(void)
+   \                     start_i2c:
+     48          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     49            SDA_W() ;
+   \   000004   43FE02       ORL     0xfe,#0x2
+     50            LIGHT_DTA_1();//
+   \   000007   D291         SETB    0x90.1
+     51            LIGHT_SCK_1() ;//
+   \   000009   D293         SETB    0x90.3
+     52            Delay_us() ;
+   \   00000B                ; Setup parameters for call to function halMcuWaitUs
+   \   00000B   7A01         MOV     R2,#0x1
+   \   00000D   7B00         MOV     R3,#0x0
+   \   00000F   12....       LCALL   ??halMcuWaitUs?relay
+     53            LIGHT_DTA_0() ;
+   \   000012   C291         CLR     0x90.1
+     54            Delay_us()  ;
+   \   000014                ; Setup parameters for call to function halMcuWaitUs
+   \   000014   80..         SJMP    ?Subroutine0
+   \   000016                REQUIRE P1DIR
+   \   000016                REQUIRE _A_P1
+     55            LIGHT_SCK_0() ;
+     56            Delay_us()  ;
+     57            //Delay()  ;
+     58          }
+     59           
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          static void stop_i2c(void)
+   \                     stop_i2c:
+     61          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     62            SDA_W() ;
+   \   000004   43FE02       ORL     0xfe,#0x2
+     63            LIGHT_DTA_0() ;
+   \   000007   C291         CLR     0x90.1
+     64            Delay_us();
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009   12....       LCALL   ?Subroutine3 & 0xFFFF
+     65            LIGHT_SCK_1() ;
+     66            Delay_us();
+     67            LIGHT_DTA_1() ;
+   \                     ??CrossCallReturnLabel_2:
+   \   00000C   D291         SETB    0x90.1
+     68            Delay_us();
+   \   00000E                ; Setup parameters for call to function halMcuWaitUs
+   \   00000E   80..         SJMP    ?Subroutine0
+   \   000010                REQUIRE P1DIR
+   \   000010                REQUIRE _A_P1
+     69            LIGHT_SCK_0() ;
+     70            Delay_us();  
+     71          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7A01         MOV     R2,#0x1
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??halMcuWaitUs?relay
+   \   000007   D293         SETB    0x90.3
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009   7A01         MOV     R2,#0x1
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??halMcuWaitUs?relay
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     72          static char i2c_send(unsigned char val)                 
+   \                     i2c_send:
+     73          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+     74                  int i;
+     75                  char error=0;
+   \   000007   75..00       MOV     ?V0 + 0,#0x0
+     76                  SDA_W();
+   \   00000A   43FE02       ORL     0xfe,#0x2
+     77                  for(i=0x80;i>0;i/=2)
+   \   00000D   7E80         MOV     R6,#-0x80
+   \   00000F   7F00         MOV     R7,#0x0
+     78          		{
+     79          			if(val&i)
+   \                     ??i2c_send_0:
+   \   000011   EE           MOV     A,R6
+   \   000012   55..         ANL     A,?V0 + 1
+   \   000014   6004         JZ      ??i2c_send_1
+     80          				LIGHT_DTA_1();
+   \   000016   D291         SETB    0x90.1
+   \   000018   8002         SJMP    ??i2c_send_2
+     81          			else
+     82          				LIGHT_DTA_0();
+   \                     ??i2c_send_1:
+   \   00001A   C291         CLR     0x90.1
+     83          			Delay_us();
+   \                     ??i2c_send_2:
+   \   00001C                ; Setup parameters for call to function halMcuWaitUs
+   \   00001C   7A01         MOV     R2,#0x1
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   12....       LCALL   ??halMcuWaitUs?relay
+     84          			LIGHT_SCK_1() ; 
+   \   000023   D293         SETB    0x90.3
+     85          			Delay_us();
+   \   000025                ; Setup parameters for call to function halMcuWaitUs
+   \   000025   12....       LCALL   ?Subroutine2 & 0xFFFF
+     86          			LIGHT_SCK_0() ;
+     87          			Delay_us();					
+     88          		}
+   \                     ??CrossCallReturnLabel_0:
+   \   000028   12....       LCALL   ?S_DIV_MOD
+   \   00002B   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00002E   50E1         JNC     ??i2c_send_0
+     89                  LIGHT_DTA_1();
+   \   000030   D291         SETB    0x90.1
+     90                  SDA_R();
+   \   000032   53FEFD       ANL     0xfe,#0xfd
+     91                  Delay_us();
+   \   000035                ; Setup parameters for call to function halMcuWaitUs
+   \   000035   12....       LCALL   ?Subroutine3 & 0xFFFF
+     92                  //Delay_us();
+     93                  LIGHT_SCK_1() ; 
+     94                  Delay_us();
+     95                  if(LIGHT_DTA())
+   \                     ??CrossCallReturnLabel_3:
+   \   000038   A291         MOV     C,0x90.1
+   \   00003A   5003         JNC     ??i2c_send_3
+     96                      error=1;
+   \   00003C   75..01       MOV     ?V0 + 0,#0x1
+     97                  Delay_us();
+   \                     ??i2c_send_3:
+   \   00003F                ; Setup parameters for call to function halMcuWaitUs
+   \   00003F   7A01         MOV     R2,#0x1
+   \   000041   7B00         MOV     R3,#0x0
+   \   000043   12....       LCALL   ??halMcuWaitUs?relay
+     98                  LIGHT_SCK_0() ;
+   \   000046   C293         CLR     0x90.3
+     99                  return error;
+   \   000048                REQUIRE ?Subroutine1
+   \   000048                REQUIRE P1DIR
+   \   000048                REQUIRE _A_P1
+   \   000048                ; // Fall through to label ?Subroutine1
+    100                  
+    101          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   A9..         MOV     R1,?V0 + 0
+   \   000002   7F04         MOV     R7,#0x4
+   \   000004   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   88..         MOV     ?V0 + 2,R0
+   \   000002   89..         MOV     ?V0 + 3,R1
+   \   000004   AE..         MOV     R6,?V0 + 2
+   \   000006   AF..         MOV     R7,?V0 + 3
+   \   000008   C3           CLR     C
+   \   000009   EE           MOV     A,R6
+   \   00000A   9401         SUBB    A,#0x1
+   \   00000C   EF           MOV     A,R7
+   \   00000D   9400         SUBB    A,#0x0
+   \   00000F   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000011   65D0         XRL     A,PSW
+   \   000013   33           RLC     A
+   \   000014   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7A01         MOV     R2,#0x1
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??halMcuWaitUs?relay
+   \   000007   C293         CLR     0x90.3
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009   7A01         MOV     R2,#0x1
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??halMcuWaitUs?relay
+   \   000010   EE           MOV     A,R6
+   \   000011   F8           MOV     R0,A
+   \   000012   EF           MOV     A,R7
+   \   000013   F9           MOV     R1,A
+   \   000014   7A02         MOV     R2,#0x2
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    102          static char i2c_read(char ack)
+   \                     i2c_read:
+    103          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+    104                  int i;
+    105                  char val=0;
+   \   000007   75..00       MOV     ?V0 + 0,#0x0
+    106                  LIGHT_DTA_1();
+   \   00000A   D291         SETB    0x90.1
+    107                  //SDA_R();
+    108                  for(i=0x80;i>0;i/=2)
+   \   00000C   7E80         MOV     R6,#-0x80
+   \   00000E   7F00         MOV     R7,#0x0
+    109                          {
+    110                                  
+    111                                  LIGHT_SCK_1() ;
+   \                     ??i2c_read_0:
+   \   000010   D293         SETB    0x90.3
+    112                                  Delay_us();
+   \   000012                ; Setup parameters for call to function halMcuWaitUs
+   \   000012   7A01         MOV     R2,#0x1
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   12....       LCALL   ??halMcuWaitUs?relay
+    113                                  SDA_R();
+   \   000019   53FEFD       ANL     0xfe,#0xfd
+    114                                  //SDA_W();
+    115                                  //LIGHT_DTA_0();
+    116                                  //LIGHT_DTA_0() ;
+    117                                  
+    118                                  //Delay_us();
+    119                                  if(LIGHT_DTA())
+   \   00001C   A291         MOV     C,0x90.1
+   \   00001E   5003         JNC     ??i2c_read_1
+    120                                          val=(val|i);
+   \   000020   EE           MOV     A,R6
+   \   000021   42..         ORL     ?V0 + 0,A
+    121                                  Delay_us();
+   \                     ??i2c_read_1:
+   \   000023                ; Setup parameters for call to function halMcuWaitUs
+   \   000023   12....       LCALL   ?Subroutine2 & 0xFFFF
+    122                                  //SDA_R();
+    123                                  LIGHT_SCK_0() ;
+    124                                  Delay_us();
+    125                                  
+    126                                  
+    127                          }
+   \                     ??CrossCallReturnLabel_1:
+   \   000026   12....       LCALL   ?S_DIV_MOD
+   \   000029   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00002C   50E2         JNC     ??i2c_read_0
+    128                  SDA_W();
+   \   00002E   43FE02       ORL     0xfe,#0x2
+    129                  if(ack)
+   \   000031   E5..         MOV     A,?V0 + 1
+   \   000033   6004         JZ      ??i2c_read_2
+    130                          LIGHT_DTA_0();
+   \   000035   C291         CLR     0x90.1
+   \   000037   8002         SJMP    ??i2c_read_3
+    131                  else
+    132                          LIGHT_DTA_1();
+   \                     ??i2c_read_2:
+   \   000039   D291         SETB    0x90.1
+    133                  Delay_us();
+   \                     ??i2c_read_3:
+   \   00003B                ; Setup parameters for call to function halMcuWaitUs
+   \   00003B   12....       LCALL   ?Subroutine3 & 0xFFFF
+    134                  LIGHT_SCK_1() ;
+    135                  Delay_us();
+    136                  LIGHT_SCK_0() ;
+   \                     ??CrossCallReturnLabel_4:
+   \   00003E   C293         CLR     0x90.3
+    137                  LIGHT_DTA_1();
+   \   000040   D291         SETB    0x90.1
+    138                  return val;
+   \   000042   80..         SJMP    ?Subroutine1
+   \   000044                REQUIRE _A_P1
+   \   000044                REQUIRE P1DIR
+    139                  
+    140          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    141          unsigned short get_light(void)
+   \                     get_light:
+    142          {        
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    143                  unsigned char ack1=1;
+    144                  unsigned char ack2=1;
+    145                  unsigned char ack3=1;
+    146                  unsigned char ack4=1;
+    147                  unsigned char ack5=1;
+    148                  unsigned char ack6=1;
+    149                  unsigned char ack7=1;
+    150                  
+    151                  unsigned char t0;
+    152                  unsigned char t1;
+    153                  unsigned short t;
+    154           
+    155                  P1DIR |= (1 << 1);
+   \   000005   43FE02       ORL     0xfe,#0x2
+    156                  Delay_ms(200);
+   \   000008                ; Setup parameters for call to function halMcuWaitMs
+   \   000008   7AC8         MOV     R2,#-0x38
+   \   00000A   7B00         MOV     R3,#0x0
+   \   00000C   12....       LCALL   ??halMcuWaitMs?relay
+    157           
+    158          		start_i2c();
+   \   00000F                ; Setup parameters for call to function start_i2c
+   \   00000F   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+    159          		ack1=i2c_send(0x46);
+    160          		if(ack1)
+   \                     ??CrossCallReturnLabel_9:
+   \   000012   6006         JZ      ??get_light_0
+    161          				return 255;
+   \   000014   7AFF         MOV     R2,#-0x1
+   \                     ??get_light_1:
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   8065         SJMP    ??get_light_2
+    162          		ack2=i2c_send(0x01);
+    163          		if(ack2)
+   \                     ??get_light_0:
+   \   00001A                ; Setup parameters for call to function i2c_send
+   \   00001A   7901         MOV     R1,#0x1
+   \   00001C   12....       LCALL   ??i2c_send?relay
+   \   00001F   E9           MOV     A,R1
+   \   000020   6004         JZ      ??get_light_3
+    164          				return 254;
+   \   000022   7AFE         MOV     R2,#-0x2
+   \   000024   80F0         SJMP    ??get_light_1
+    165          		stop_i2c();           //init
+   \                     ??get_light_3:
+   \   000026                ; Setup parameters for call to function stop_i2c
+   \   000026   12....       LCALL   ?Subroutine4 & 0xFFFF
+    166          		start_i2c();
+    167          		ack3=i2c_send(0x46);
+    168          		if(ack3)
+   \                     ??CrossCallReturnLabel_7:
+   \   000029   6004         JZ      ??get_light_4
+    169          				return 253;
+   \   00002B   7AFD         MOV     R2,#-0x3
+   \   00002D   80E7         SJMP    ??get_light_1
+    170          		ack4=i2c_send(0x01);
+    171          		if(ack4)
+   \                     ??get_light_4:
+   \   00002F                ; Setup parameters for call to function i2c_send
+   \   00002F   7901         MOV     R1,#0x1
+   \   000031   12....       LCALL   ??i2c_send?relay
+   \   000034   E9           MOV     A,R1
+   \   000035   6004         JZ      ??get_light_5
+    172          				return 252;
+   \   000037   7AFC         MOV     R2,#-0x4
+   \   000039   80DB         SJMP    ??get_light_1
+    173          		stop_i2c();//power
+   \                     ??get_light_5:
+   \   00003B                ; Setup parameters for call to function stop_i2c
+   \   00003B   12....       LCALL   ?Subroutine4 & 0xFFFF
+    174          		start_i2c();
+    175          		ack5=i2c_send(0x46);
+    176          		if(ack5)
+   \                     ??CrossCallReturnLabel_8:
+   \   00003E   6004         JZ      ??get_light_6
+    177          				return 251;
+   \   000040   7AFB         MOV     R2,#-0x5
+   \   000042   80D2         SJMP    ??get_light_1
+    178          		ack6=i2c_send(0x10);
+    179          		if(ack6)
+   \                     ??get_light_6:
+   \   000044                ; Setup parameters for call to function i2c_send
+   \   000044   7910         MOV     R1,#0x10
+   \   000046   12....       LCALL   ??i2c_send?relay
+   \   000049   E9           MOV     A,R1
+   \   00004A   6004         JZ      ??get_light_7
+    180          				return 250;
+   \   00004C   7AFA         MOV     R2,#-0x6
+   \   00004E   80C6         SJMP    ??get_light_1
+    181          		stop_i2c();                     
+   \                     ??get_light_7:
+   \   000050                ; Setup parameters for call to function stop_i2c
+   \   000050   12....       LCALL   ??stop_i2c?relay
+    182                  Delay_ms(1500);
+   \   000053                ; Setup parameters for call to function halMcuWaitMs
+   \   000053   7ADC         MOV     R2,#-0x24
+   \   000055   7B05         MOV     R3,#0x5
+   \   000057   12....       LCALL   ??halMcuWaitMs?relay
+    183                  start_i2c();
+   \   00005A                ; Setup parameters for call to function start_i2c
+   \   00005A   12....       LCALL   ??start_i2c?relay
+    184                  
+    185          		ack7=i2c_send(0x47);
+    186          		if(ack7)
+   \   00005D                ; Setup parameters for call to function i2c_send
+   \   00005D   7947         MOV     R1,#0x47
+   \   00005F   12....       LCALL   ??i2c_send?relay
+   \   000062   E9           MOV     A,R1
+   \   000063   6004         JZ      ??get_light_8
+    187          				return 249;
+   \   000065   7AF9         MOV     R2,#-0x7
+   \   000067   80AD         SJMP    ??get_light_1
+    188                                  
+    189                  t0 = i2c_read(1);
+   \                     ??get_light_8:
+   \   000069                ; Setup parameters for call to function i2c_read
+   \   000069   7901         MOV     R1,#0x1
+   \   00006B   12....       LCALL   ??i2c_read?relay
+   \   00006E   E9           MOV     A,R1
+   \   00006F   FE           MOV     R6,A
+    190                  t1 = i2c_read(0);
+   \   000070                ; Setup parameters for call to function i2c_read
+   \   000070   7900         MOV     R1,#0x0
+   \   000072   12....       LCALL   ??i2c_read?relay
+   \   000075   E9           MOV     A,R1
+   \   000076   F5..         MOV     ?V0 + 0,A
+    191                  stop_i2c();
+   \   000078                ; Setup parameters for call to function stop_i2c
+   \   000078   12....       LCALL   ??stop_i2c?relay
+    192                  t =  ((short)t0)<<8;
+    193                  t |= t1;
+    194                  return t;
+   \   00007B   EE           MOV     A,R6
+   \   00007C   AA..         MOV     R2,?V0 + 0
+   \   00007E   FB           MOV     R3,A
+   \                     ??get_light_2:
+   \   00007F   7F02         MOV     R7,#0x2
+   \   000081   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000084                REQUIRE P1DIR
+    195          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ??stop_i2c?relay
+   \   000003                ; Setup parameters for call to function start_i2c
+   \   000003                ; Setup parameters for call to function start_i2c
+   \   000003                REQUIRE ??Subroutine9_0
+   \   000003                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   12....       LCALL   ??start_i2c?relay
+   \   000003                ; Setup parameters for call to function i2c_send
+   \   000003                ; Setup parameters for call to function i2c_send
+   \   000003                ; Setup parameters for call to function i2c_send
+   \   000003   7946         MOV     R1,#0x46
+   \   000005   12....       LCALL   ??i2c_send?relay
+   \   000008   E9           MOV     A,R1
+   \   000009   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuWaitUs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuWaitUs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halMcuWaitMs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halMcuWaitMs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_5us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_5us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??start_i2c?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    start_i2c
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??stop_i2c?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    stop_i2c
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??i2c_send?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    i2c_send
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??i2c_read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    i2c_read
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_light?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_light
+    196           
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     Delay_10us            2      0      0
+       -> halMcuWaitUs     4      0      0
+     Delay_5us             2      0      0
+       -> halMcuWaitUs     4      0      0
+     Delay_ms              2      0      0
+       -> halMcuWaitMs     4      0      0
+     Delay_us              2      0      0
+       -> halMcuWaitUs     4      0      0
+     get_light             0      0     10
+       -> halMcuWaitMs     0      0     20
+       -> start_i2c        0      0     20
+       -> i2c_send         0      0     20
+       -> i2c_send         0      0     20
+       -> stop_i2c         0      0     20
+       -> start_i2c        0      0     20
+       -> i2c_send         0      0     20
+       -> i2c_send         0      0     20
+       -> stop_i2c         0      0     20
+       -> start_i2c        0      0     20
+       -> i2c_send         0      0     20
+       -> i2c_send         0      0     20
+       -> stop_i2c         0      0     20
+       -> halMcuWaitMs     0      0     20
+       -> start_i2c        0      0     20
+       -> i2c_send         0      0     20
+       -> i2c_read         0      0     20
+       -> i2c_read         0      0     20
+       -> stop_i2c         0      0     20
+     halMcuWaitMs          0      0     19
+       -> halMcuWaitUs     0      0     18
+     halMcuWaitUs          0      0     12
+     i2c_read              0      0     22
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+     i2c_send              0      0     22
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+       -> halMcuWaitUs     0      0     24
+     start_i2c             2      0     10
+       -> halMcuWaitUs     4      0      0
+       -> halMcuWaitUs     4      0      0
+       -> halMcuWaitUs     4      0      0
+     stop_i2c              2      0     10
+       -> halMcuWaitUs     4      0      0
+       -> halMcuWaitUs     4      0      0
+       -> halMcuWaitUs     4      0      0
+       -> halMcuWaitUs     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     _A_P1                   1
+     P1DIR                   1
+     halMcuWaitUs           31
+     halMcuWaitMs           39
+     Delay_us                6
+     ??Subroutine6_0         2
+     ??Subroutine7_0         5
+     ??Subroutine8_0         7
+     Delay_5us               8
+     Delay_10us              8
+     Delay_ms                9
+     ?Subroutine0            9
+     start_i2c              22
+     stop_i2c               16
+     ?Subroutine3           17
+     i2c_send               72
+     ?Subroutine1            7
+     ?Subroutine5           21
+     ?Subroutine2           25
+     i2c_read               68
+     get_light             132
+     ?Subroutine4            3
+     ??Subroutine9_0        10
+     ??halMcuWaitUs?relay    6
+     ??halMcuWaitMs?relay    6
+     ??Delay_us?relay        6
+     ??Delay_5us?relay       6
+     ??Delay_10us?relay      6
+     ??Delay_ms?relay        6
+     ??start_i2c?relay       6
+     ??stop_i2c?relay        6
+     ??i2c_send?relay        6
+     ??i2c_read?relay        6
+     ??get_light?relay       6
+
+ 
+ 517 bytes in segment BANKED_CODE
+  66 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+ 
+ 583 bytes of CODE memory
+   0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1 @@
+zigbee网关开发板\代码及其教程\6.终结篇-ZigBee网关带协议栈采集控制\WiFi_ZigBee\Projects\zstack\Utilities\SerialApp\CC2530DB

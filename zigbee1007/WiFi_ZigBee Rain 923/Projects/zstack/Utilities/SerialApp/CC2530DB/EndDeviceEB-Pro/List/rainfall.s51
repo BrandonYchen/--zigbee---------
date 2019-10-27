@@ -1,0 +1,2099 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        13/Oct/2019  16:34:30 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi /
+//                          gBee Rain 923\Projects\zstack\Utilities\SerialApp /
+//                          \Source\rainfall.c                                /
+//    Command line       =  -f "C:\Users\Administrator\Desktop\zigbee1007\WiF /
+//                          i_ZigBee Rain 923\Projects\zstack\Utilities\Seria /
+//                          lApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cf /
+//                          g" (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)   /
+//                          -f "C:\Users\Administrator\Desktop\zigbee1007\WiF /
+//                          i_ZigBee Rain 923\Projects\zstack\Utilities\Seria /
+//                          lApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.c /
+//                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0             /
+//                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800         /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Users\Administrator\De /
+//                          sktop\zigbee1007\WiFi_ZigBee Rain                 /
+//                          923\Projects\zstack\Utilities\SerialApp\Source\ra /
+//                          infall.c" -D ZIGBEEPRO -D NWK_AUTO_POLL -D        /
+//                          HAL_UART=TRUE -D SERIAL_APP_PORT=0 -D             /
+//                          LCD_SUPPORTED -D xPOWER_SAVING -lC                /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\EndDeviceEB-Pro\List\" -lA             /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\EndDeviceEB-Pro\List\"                 /
+//                          --diag_suppress Pe001,Pa010 -o                    /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\EndDeviceEB-Pro\Obj\" -e --debug       /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 8 -I "C:\Users\Administrator\De /
+//                          sktop\zigbee1007\WiFi_ZigBee Rain                 /
+//                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\ /
+//                          " -I "C:\Users\Administrator\Desktop\zigbee1007\W /
+//                          iFi_ZigBee Rain 923\Projects\zstack\Utilities\Ser /
+//                          ialApp\CC2530DB\..\SOURCE\" -I                    /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I           /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I      /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ /
+//                          " -I "C:\Users\Administrator\Desktop\zigbee1007\W /
+//                          iFi_ZigBee Rain 923\Projects\zstack\Utilities\Ser /
+//                          ialApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TAR /
+//                          GET\CC2530EB\" -I "C:\Users\Administrator\Desktop /
+//                          \zigbee1007\WiFi_ZigBee Rain                      /
+//                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\ /
+//                          ..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I     /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE /
+//                          \" -I "C:\Users\Administrator\Desktop\zigbee1007\ /
+//                          WiFi_ZigBee Rain 923\Projects\zstack\Utilities\Se /
+//                          rialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ /
+//                          AF\" -I "C:\Users\Administrator\Desktop\zigbee100 /
+//                          7\WiFi_ZigBee Rain 923\Projects\zstack\Utilities\ /
+//                          SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\STAC /
+//                          K\NWK\" -I "C:\Users\Administrator\Desktop\zigbee /
+//                          1007\WiFi_ZigBee Rain 923\Projects\zstack\Utiliti /
+//                          es\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\S /
+//                          TACK\SEC\" -I "C:\Users\Administrator\Desktop\zig /
+//                          bee1007\WiFi_ZigBee Rain                          /
+//                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\ /
+//                          ..\..\..\..\..\COMPONENTS\STACK\SAPI\" -I         /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\"  /
+//                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiF /
+//                          i_ZigBee Rain 923\Projects\zstack\Utilities\Seria /
+//                          lApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO /
+//                          \" -I "C:\Users\Administrator\Desktop\zigbee1007\ /
+//                          WiFi_ZigBee Rain 923\Projects\zstack\Utilities\Se /
+//                          rialApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F /
+//                          8W\" -I "C:\Users\Administrator\Desktop\zigbee100 /
+//                          7\WiFi_ZigBee Rain 923\Projects\zstack\Utilities\ /
+//                          SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC /
+//                          \" -I "C:\Users\Administrator\Desktop\zigbee1007\ /
+//                          WiFi_ZigBee Rain 923\Projects\zstack\Utilities\Se /
+//                          rialApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC /
+//                          ES\SADDR\" -I "C:\Users\Administrator\Desktop\zig /
+//                          bee1007\WiFi_ZigBee Rain                          /
+//                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\ /
+//                          ..\..\..\..\..\COMPONENTS\SERVICES\SDATA\" -I     /
+//                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Z /
+//                          igBee Rain 923\Projects\zstack\Utilities\SerialAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ /
+//                          " -I "C:\Users\Administrator\Desktop\zigbee1007\W /
+//                          iFi_ZigBee Rain 923\Projects\zstack\Utilities\Ser /
+//                          ialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIG /
+//                          H_LEVEL\" -I "C:\Users\Administrator\Desktop\zigb /
+//                          ee1007\WiFi_ZigBee Rain                           /
+//                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\ /
+//                          ..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\"   /
+//                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiF /
+//                          i_ZigBee Rain 923\Projects\zstack\Utilities\Seria /
+//                          lApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_L /
+//                          EVEL\srf04\SINGLE_CHIP\" -Ohz                     /
+//    List file          =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi /
+//                          gBee Rain 923\Projects\zstack\Utilities\SerialApp /
+//                          \CC2530DB\EndDeviceEB-Pro\List\rainfall.s51       /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME rainfall
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?FLT_MUL
+        EXTERN ?L_MOV_X
+        EXTERN ?UL_TO_FLT
+        EXTERN ?V0
+
+        PUBLIC ??Delay_10us?relay
+        FUNCTION ??Delay_10us?relay,0203H
+        PUBLIC ??Delay_ms?relay
+        FUNCTION ??Delay_ms?relay,0203H
+        PUBLIC ??Delay_s?relay
+        FUNCTION ??Delay_s?relay,0203H
+        PUBLIC ??Delay_us?relay
+        FUNCTION ??Delay_us?relay,0203H
+        PUBLIC ??RainfallDelay?relay
+        FUNCTION ??RainfallDelay?relay,0203H
+        PUBLIC ??RainfallInitial?relay
+        FUNCTION ??RainfallInitial?relay,0203H
+        PUBLIC ??RainfallInputInitial?relay
+        FUNCTION ??RainfallInputInitial?relay,0203H
+        PUBLIC ??RainfallOutputInitial?relay
+        FUNCTION ??RainfallOutputInitial?relay,0203H
+        PUBLIC ??RainfallRead?relay
+        FUNCTION ??RainfallRead?relay,0203H
+        PUBLIC ??RainfallWrite?relay
+        FUNCTION ??RainfallWrite?relay,0203H
+        PUBLIC ??ReadRainfall?relay
+        FUNCTION ??ReadRainfall?relay,0203H
+        PUBLIC ??floatReadRainfall?relay
+        FUNCTION ??floatReadRainfall?relay,0203H
+        PUBLIC ??fun?relay
+        FUNCTION ??fun?relay,0203H
+        PUBLIC ??myApp_ReadRainLevel?relay
+        FUNCTION ??myApp_ReadRainLevel?relay,0203H
+        PUBWEAK ADCCFG
+        PUBWEAK ADCCON1
+        PUBWEAK ADCCON3
+        PUBWEAK ADCH
+        PUBWEAK ADCL
+        PUBLIC Delay_10us
+        FUNCTION Delay_10us,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC Delay_ms
+        FUNCTION Delay_ms,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Delay_s
+        FUNCTION Delay_s,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Delay_us
+        FUNCTION Delay_us,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK P0DIR
+        PUBLIC RainfallDelay
+        FUNCTION RainfallDelay,080203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC RainfallInitial
+        FUNCTION RainfallInitial,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC RainfallInputInitial
+        FUNCTION RainfallInputInitial,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC RainfallOutputInitial
+        FUNCTION RainfallOutputInitial,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC RainfallRead
+        FUNCTION RainfallRead,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC RainfallWrite
+        FUNCTION RainfallWrite,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC ReadRainfall
+        FUNCTION ReadRainfall,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK _A_P0
+        PUBWEAK __Constant_3d800000
+        PUBLIC floatReadRainfall
+        FUNCTION floatReadRainfall,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC fun
+        FUNCTION fun,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC myApp_ReadRainLevel
+        FUNCTION myApp_ReadRainLevel,0203H
+        ARGFRAME XSTACK, 0, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+Onboard_wait        SYMBOL "Onboard_wait"
+??Onboard_wait?relay SYMBOL "?relay", Onboard_wait
+Delay_10us          SYMBOL "Delay_10us"
+??Delay_10us?relay  SYMBOL "?relay", Delay_10us
+Delay_ms            SYMBOL "Delay_ms"
+??Delay_ms?relay    SYMBOL "?relay", Delay_ms
+Delay_s             SYMBOL "Delay_s"
+??Delay_s?relay     SYMBOL "?relay", Delay_s
+Delay_us            SYMBOL "Delay_us"
+??Delay_us?relay    SYMBOL "?relay", Delay_us
+RainfallDelay       SYMBOL "RainfallDelay"
+??RainfallDelay?relay SYMBOL "?relay", RainfallDelay
+RainfallInitial     SYMBOL "RainfallInitial"
+??RainfallInitial?relay SYMBOL "?relay", RainfallInitial
+RainfallInputInitial SYMBOL "RainfallInputInitial"
+??RainfallInputInitial?relay SYMBOL "?relay", RainfallInputInitial
+RainfallOutputInitial SYMBOL "RainfallOutputInitial"
+??RainfallOutputInitial?relay SYMBOL "?relay", RainfallOutputInitial
+RainfallRead        SYMBOL "RainfallRead"
+??RainfallRead?relay SYMBOL "?relay", RainfallRead
+RainfallWrite       SYMBOL "RainfallWrite"
+??RainfallWrite?relay SYMBOL "?relay", RainfallWrite
+ReadRainfall        SYMBOL "ReadRainfall"
+??ReadRainfall?relay SYMBOL "?relay", ReadRainfall
+floatReadRainfall   SYMBOL "floatReadRainfall"
+??floatReadRainfall?relay SYMBOL "?relay", floatReadRainfall
+fun                 SYMBOL "fun"
+??fun?relay         SYMBOL "?relay", fun
+myApp_ReadRainLevel SYMBOL "myApp_ReadRainLevel"
+??myApp_ReadRainLevel?relay SYMBOL "?relay", myApp_ReadRainLevel
+
+        EXTERN Onboard_wait
+        FUNCTION Onboard_wait,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??Onboard_wait?relay
+        FUNCTION ??Onboard_wait?relay,00H
+
+// C:\Users\Administrator\Desktop\zigbee1007\WiFi_ZigBee Rain 923\Projects\zstack\Utilities\SerialApp\Source\rainfall.c
+//    1 #include "rainfall.h" 
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b4H
+// unsigned char volatile __sfr ADCCON1
+ADCCON1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b6H
+// unsigned char volatile __sfr ADCCON3
+ADCCON3:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0baH
+// unsigned char volatile __sfr ADCL
+ADCL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0bbH
+// unsigned char volatile __sfr ADCH
+ADCH:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f2H
+// unsigned char volatile __sfr ADCCFG
+ADCCFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    2 #include "OnBoard.h"
+//    3 
+//    4 #define RainfallIO P0_7       //温度传感器引脚
+//    5 //延时函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//    6 void Delay_us(void) //1 us延时
+Delay_us:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Delay_us
+        CODE
+//    7 {
+        FUNCALL Delay_us, Onboard_wait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//    8     MicroWait(1);   
+        ; Setup parameters for call to function Onboard_wait
+        MOV     R2,#0x1
+        CFI EndBlock cfiBlock0
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+//    9 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+-5
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI DPH0 Frame(CFA_SP, 5)
+        MOV     R3,#0x0
+        LCALL   ??Onboard_wait?relay
+        POP     DPH
+        CFI CFA_SP SP+-4
+        CFI DPH0 SameValue
+        POP     DPL
+        CFI CFA_SP SP+-3
+        CFI DPL0 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//   10 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   11 void Delay_10us(void) //10 us延时
+Delay_10us:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Delay_10us
+        CODE
+//   12 {
+        FUNCALL Delay_10us, Onboard_wait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   13    MicroWait(10);
+        ; Setup parameters for call to function Onboard_wait
+        MOV     R2,#0xa
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock2
+//   14 }
+//   15 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   16 void Delay_ms(unsigned int Time)//n ms延时
+Delay_ms:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Delay_ms
+        CODE
+//   17 {
+        FUNCALL Delay_ms, Onboard_wait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   18   unsigned char i;
+//   19   while(Time--)
+??Delay_ms_0:
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R7,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??Delay_ms_1
+//   20   {
+//   21     for(i=0;i<100;i++)
+        MOV     ?V0 + 0,#0x64
+//   22      Delay_10us();
+??Delay_ms_2:
+        ; Setup parameters for call to function Onboard_wait
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ??Onboard_wait?relay
+        DEC     ?V0 + 0
+        MOV     A,?V0 + 0
+        JZ      ??Delay_ms_0
+        SJMP    ??Delay_ms_2
+//   23   }
+//   24 }
+??Delay_ms_1:
+        SJMP    ??Subroutine5_0
+        CFI EndBlock cfiBlock3
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R1,A
+        CFI EndBlock cfiBlock4
+        REQUIRE ??Subroutine5_0
+        ; // Fall through to label ??Subroutine5_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine5_0:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//   25 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   26 void Delay_s(unsigned int k)
+Delay_s:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Delay_s
+        CODE
+//   27 {
+        FUNCALL Delay_s, Delay_ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        SJMP    ??Delay_s_0
+//   28     while(k)
+//   29     {
+//   30         Delay_ms(1000);
+??Delay_s_1:
+        ; Setup parameters for call to function Delay_ms
+        MOV     R2,#-0x18
+        MOV     R3,#0x3
+        LCALL   ??Delay_ms?relay
+//   31         k--;
+        MOV     A,R6
+        ADD     A,#-0x1
+        DEC     R6
+        MOV     A,R7
+        ADDC    A,#-0x1
+??Delay_s_0:
+        MOV     R7,A
+//   32     }
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     ??Delay_s_1
+//   33 }
+        SJMP    ??Subroutine5_0
+        CFI EndBlock cfiBlock6
+//   34 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   35 void RainfallDelay(unsigned int k) //时钟频率为32M 
+RainfallDelay:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function RainfallDelay
+        CODE
+//   36 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        SJMP    ??RainfallDelay_0
+//   37   while (k--) {
+//   38     asm("NOP");
+??RainfallDelay_1:
+        NOP
+//   39     asm("NOP");
+        NOP
+//   40     asm("NOP");
+        NOP
+//   41     asm("NOP");
+        NOP
+//   42     asm("NOP");
+        NOP
+//   43     asm("NOP");
+        NOP
+//   44     asm("NOP");
+        NOP
+//   45     asm("NOP"); } 
+        NOP
+??RainfallDelay_0:
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R2
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??RainfallDelay_1
+//   46 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+//   47 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   48 void RainfallInputInitial(void)//设置端口为输入
+RainfallInputInitial:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function RainfallInputInitial
+        CODE
+//   49 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   50     P0DIR &= 0x7f;
+        ANL     0xfd,#0x7f
+//   51 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+        REQUIRE P0DIR
+//   52 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   53 void RainfallOutputInitial(void)//设置端口为输出
+RainfallOutputInitial:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function RainfallOutputInitial
+        CODE
+//   54 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   55     P0DIR |= 0x80;
+        ORL     0xfd,#0x80
+//   56 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+        REQUIRE P0DIR
+//   57 
+//   58 //rainfall初始化  初始化成功返回0x00，失败返回0x01
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   59 unsigned char RainfallInitial(void)
+RainfallInitial:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function RainfallInitial
+        CODE
+//   60 {
+        FUNCALL RainfallInitial, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallInitial, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallInitial, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallInitial, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//   61     unsigned char Status = 0x00;
+        MOV     ?V0 + 0,#0x0
+//   62     unsigned int CONT_1 = 0;
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//   63     unsigned char Flag_1 = 1;
+        MOV     ?V0 + 1,#0x1
+//   64     RainfallOutputInitial();
+        ORL     0xfd,#0x80
+//   65     RainfallIO = 1;      //DQ复位
+        SETB    0x80.7
+//   66     RainfallDelay(260);  //稍做延时
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x4
+        MOV     R3,#0x1
+        LCALL   ??RainfallDelay?relay
+//   67     RainfallIO = 0;      //单片机将DQ拉低
+        CLR     0x80.7
+//   68     RainfallDelay(750);  //精确延时 大于 480us 小于960us
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#-0x12
+        MOV     R3,#0x2
+        LCALL   ??Subroutine6_0 & 0xFFFF
+//   69     RainfallIO = 1;      //拉高总线
+//   70     RainfallInputInitial();//设置IO输入
+??CrossCallReturnLabel_7:
+        ANL     0xfd,#0x7f
+        SJMP    ??RainfallInitial_0
+//   71     while((RainfallIO != 0)&&(Flag_1 == 1))//等待rainfall响应，具有防止超时功能
+//   72     {                                      //等待约60ms左右
+//   73         CONT_1++;
+??RainfallInitial_1:
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//   74         RainfallDelay(10);
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//   75         if(CONT_1 > 8000)Flag_1 = 0;
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x41
+        MOV     A,R7
+        SUBB    A,#0x1f
+        JC      ??RainfallInitial_2
+        MOV     ?V0 + 1,#0x0
+//   76         Status = RainfallIO;
+??RainfallInitial_2:
+        MOV     C,0x80.7
+        CLR     A
+        RLC     A
+        MOV     ?V0 + 0,A
+//   77     }
+??RainfallInitial_0:
+        MOV     C,0x80.7
+        JNC     ??RainfallInitial_3
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.0
+        JC      ??RainfallInitial_1
+//   78     RainfallOutputInitial();
+??RainfallInitial_3:
+        ORL     0xfd,#0x80
+//   79     RainfallIO = 1;
+        SETB    0x80.7
+//   80     RainfallDelay(100);
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//   81     return Status;       //返回初始化状态
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+//   82 }
+//   83 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   84 void RainfallWrite(unsigned char infor)
+RainfallWrite:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function RainfallWrite
+        CODE
+//   85 {
+        FUNCALL RainfallWrite, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallWrite, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallWrite, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallWrite, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//   86     unsigned int i;
+//   87     RainfallOutputInitial();
+        ORL     0xfd,#0x80
+//   88     for(i=0;i<8;i++)
+        MOV     R6,#0x8
+//   89     {
+//   90         if((infor & 0x01))
+??RainfallWrite_0:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.0
+        CLR     0x80.7
+        JNC     ??RainfallWrite_1
+//   91         {
+//   92             RainfallIO = 0;
+//   93             RainfallDelay(6);
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x6
+        LCALL   ?Subroutine3 & 0xFFFF
+//   94             RainfallIO = 1;
+//   95             RainfallDelay(50);
+??CrossCallReturnLabel_4:
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x32
+        SJMP    ??RainfallWrite_2
+//   96         }
+//   97         else
+//   98         {
+//   99             RainfallIO = 0;
+//  100             RainfallDelay(50);
+??RainfallWrite_1:
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x32
+        LCALL   ?Subroutine3 & 0xFFFF
+//  101             RainfallIO = 1;
+//  102             RainfallDelay(6);
+??CrossCallReturnLabel_5:
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x6
+??RainfallWrite_2:
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//  103         }
+//  104         infor >>= 1;
+        MOV     A,R7
+        CLR     C
+        RRC     A
+        MOV     R7,A
+//  105     }
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??RainfallWrite_0
+//  106 }
+        LJMP    ??Subroutine5_0 & 0xFFFF
+        CFI EndBlock cfiBlock11
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        CFI Block cfiCond12 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_4
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond13 Using cfiCommon0
+        CFI (cfiCond13) NoFunction
+        CFI (cfiCond13) Conditional ??CrossCallReturnLabel_5
+        CFI (cfiCond13) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond13) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond13) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond13) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond13) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond13) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond13) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond13) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond13) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond13) CFA_SP SP+0
+        CFI (cfiCond13) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond14 Using cfiCommon0
+        CFI (cfiCond14) NoFunction
+        CFI (cfiCond14) Conditional ??CrossCallReturnLabel_6
+        CFI (cfiCond14) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond14) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond14) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond14) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond14) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond14) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond14) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond14) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond14) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond14) CFA_SP SP+0
+        CFI (cfiCond14) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiPicker15 Using cfiCommon1
+        CFI (cfiPicker15) NoFunction
+        CFI (cfiPicker15) Picker
+        MOV     R3,#0x0
+        CFI EndBlock cfiCond12
+        CFI EndBlock cfiCond13
+        CFI EndBlock cfiCond14
+        CFI EndBlock cfiPicker15
+        REQUIRE ??Subroutine6_0
+        ; // Fall through to label ??Subroutine6_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine6_0:
+        CFI Block cfiCond16 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_7
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond17 Using cfiCommon0
+        CFI (cfiCond17) NoFunction
+        CFI (cfiCond17) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond17) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond17) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond17) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond17) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond17) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond17) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond17) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond17) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond17) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond17) CFA_SP SP+0
+        CFI (cfiCond17) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond18 Using cfiCommon0
+        CFI (cfiCond18) NoFunction
+        CFI (cfiCond18) Conditional ??CrossCallReturnLabel_5
+        CFI (cfiCond18) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond18) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond18) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond18) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond18) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond18) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond18) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond18) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond18) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond18) CFA_SP SP+0
+        CFI (cfiCond18) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond19 Using cfiCommon0
+        CFI (cfiCond19) NoFunction
+        CFI (cfiCond19) Conditional ??CrossCallReturnLabel_6
+        CFI (cfiCond19) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond19) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond19) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond19) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond19) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond19) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond19) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond19) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond19) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond19) CFA_SP SP+0
+        CFI (cfiCond19) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiPicker20 Using cfiCommon1
+        CFI (cfiPicker20) NoFunction
+        CFI (cfiPicker20) Picker
+        LCALL   ??RainfallDelay?relay
+        SETB    0x80.7
+        RET
+        CFI EndBlock cfiCond16
+        CFI EndBlock cfiCond17
+        CFI EndBlock cfiCond18
+        CFI EndBlock cfiCond19
+        CFI EndBlock cfiPicker20
+//  107 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  108 unsigned char RainfallRead(void)
+RainfallRead:
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function RainfallRead
+        CODE
+//  109 {
+        FUNCALL RainfallRead, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallRead, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallRead, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL RainfallRead, RainfallDelay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  110     unsigned char Value = 0x00;
+        MOV     R6,#0x0
+//  111     unsigned int i;
+//  112     RainfallOutputInitial();
+        ORL     0xfd,#0x80
+//  113     RainfallIO = 1;
+        SETB    0x80.7
+//  114     RainfallDelay(10);
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//  115     for(i=0;i<8;i++)
+        MOV     R7,#0x8
+//  116     {
+//  117         Value >>= 1; 
+??RainfallRead_0:
+        MOV     A,R6
+        CLR     C
+        RRC     A
+        MOV     R6,A
+//  118         RainfallOutputInitial();
+        ORL     0xfd,#0x80
+//  119         RainfallIO = 0;// 给脉冲信号
+        CLR     0x80.7
+//  120         RainfallDelay(3);
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x3
+        LCALL   ?Subroutine3 & 0xFFFF
+//  121         RainfallIO = 1;// 给脉冲信号
+//  122         RainfallDelay(3);
+??CrossCallReturnLabel_6:
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//  123         RainfallInputInitial();
+        ANL     0xfd,#0x7f
+//  124         if(RainfallIO == 1) Value |= 0x80;
+        MOV     C,0x80.7
+        JNC     ??RainfallRead_1
+        MOV     A,R6
+        SETB    0xE0 /* A   */.7
+        MOV     R6,A
+//  125         RainfallDelay(15);
+??RainfallRead_1:
+        ; Setup parameters for call to function RainfallDelay
+        MOV     R2,#0xf
+        MOV     R3,#0x0
+        LCALL   ??RainfallDelay?relay
+//  126     } 
+        DEC     R7
+        MOV     A,R7
+        JNZ     ??RainfallRead_0
+//  127     return Value;
+        MOV     A,R6
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock21
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+//  128 }
+//  129 
+//  130 //温度读取函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  131 unsigned char ReadRainfall(void) 
+ReadRainfall:
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI Function ReadRainfall
+        CODE
+//  132 {
+        FUNCALL ReadRainfall, RainfallInitial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallInitial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadRainfall, RainfallRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  133     unsigned char V1,V2;   //定义高低8位 缓冲
+//  134     unsigned char temp;    //定义温度缓冲寄存器
+//  135     
+//  136     RainfallInitial();
+        ; Setup parameters for call to function RainfallInitial
+        LCALL   ?Subroutine2 & 0xFFFF
+//  137     RainfallWrite(0xcc);    // 跳过读序号列号的操作
+//  138     RainfallWrite(0x44);    // 启动温度转换
+//  139     
+//  140     RainfallInitial();
+//  141     RainfallWrite(0xcc);    //跳过读序号列号的操作 
+//  142     RainfallWrite(0xbe);    //读取温度寄存器等（共可读9个寄存器） 前两个就是温度
+//  143     
+//  144     V1 = RainfallRead();    //低位
+??CrossCallReturnLabel_0:
+        MOV     R6,A
+//  145     V2 = RainfallRead();    //高位
+//  146     temp = ((V1 >> 4)+((V2 & 0x07)*16)); //转换数据 
+//  147 
+//  148     return temp;
+        ; Setup parameters for call to function RainfallRead
+        LCALL   ??RainfallRead?relay
+        MOV     A,R1
+        ANL     A,#0x7
+        SWAP    A
+        MOV     R0,A
+        MOV     A,R6
+        SWAP    A
+        ANL     A,#0xf
+        ADD     A,R0
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock22
+//  149 }
+//  150 
+//  151 //温度读取函数 带1位小数位
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  152 float floatReadRainfall(void) 
+floatReadRainfall:
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI Function floatReadRainfall
+        CODE
+//  153 {
+        FUNCALL floatReadRainfall, RainfallInitial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallInitial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL floatReadRainfall, RainfallRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  154     unsigned char V1,V2;   //定义高低8位 缓冲
+//  155     unsigned int temp;     //定义温度缓冲寄存器
+//  156     float fValue;
+//  157     RainfallInitial();
+        ; Setup parameters for call to function RainfallInitial
+        LCALL   ?Subroutine2 & 0xFFFF
+//  158     RainfallWrite(0xcc);    // 跳过读序号列号的操作
+//  159     RainfallWrite(0x44);    // 启动温度转换
+//  160     
+//  161     RainfallInitial();
+//  162     RainfallWrite(0xcc);    //跳过读序号列号的操作 
+//  163     RainfallWrite(0xbe);    //读取温度寄存器等（共可读9个寄存器） 前两个就是温度
+//  164     
+//  165     V1 = RainfallRead();    //低位
+??CrossCallReturnLabel_1:
+        MOV     ?V0 + 0,A
+//  166     V2 = RainfallRead();    //高位
+//  167     //temp = ((V1 >> 4)+((V2 & 0x07)*16)); //转换数据 
+//  168     temp=V2*0xFF+V1;
+//  169     fValue = temp*0.0625;
+//  170     
+//  171     return fValue;
+        ; Setup parameters for call to function RainfallRead
+        LCALL   ??RainfallRead?relay
+        MOV     A,R1
+        MOV     B,#-0x1
+        MUL     AB
+        ADD     A,?V0 + 0
+        MOV     ?V0 + 0,A
+        MOV     A,B
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3d800000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock23
+//  172 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        CFI Block cfiCond24 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond25 Using cfiCommon0
+        CFI (cfiCond25) NoFunction
+        CFI (cfiCond25) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond25) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI (cfiCond25) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI (cfiCond25) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI (cfiCond25) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI (cfiCond25) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI (cfiCond25) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond25) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond25) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond25) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond25) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond25) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond25) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond25) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond25) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond25) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond25) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond25) CFA_SP SP+0
+        CFI (cfiCond25) CFA_XSP16 add(XSP16, 16)
+        CFI Block cfiPicker26 Using cfiCommon1
+        CFI (cfiPicker26) NoFunction
+        CFI (cfiPicker26) Picker
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_2:
+        ; Setup parameters for call to function RainfallWrite
+        ; Setup parameters for call to function RainfallWrite
+        MOV     R1,#0x44
+        LCALL   ??RainfallWrite?relay
+        ; Setup parameters for call to function RainfallInitial
+        ; Setup parameters for call to function RainfallInitial
+        LCALL   ?Subroutine4 & 0xFFFF
+??CrossCallReturnLabel_3:
+        ; Setup parameters for call to function RainfallWrite
+        ; Setup parameters for call to function RainfallWrite
+        MOV     R1,#-0x42
+        LCALL   ??RainfallWrite?relay
+        ; Setup parameters for call to function RainfallRead
+        ; Setup parameters for call to function RainfallRead
+        LCALL   ??RainfallRead?relay
+        MOV     A,R1
+        RET
+        CFI EndBlock cfiCond24
+        CFI EndBlock cfiCond25
+        CFI EndBlock cfiPicker26
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine4:
+        CFI Block cfiCond27 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_2, ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond28 Using cfiCommon0
+        CFI (cfiCond28) NoFunction
+        CFI (cfiCond28) Conditional ??CrossCallReturnLabel_2, ??CrossCallReturnLabel_1
+        CFI (cfiCond28) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI (cfiCond28) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI (cfiCond28) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI (cfiCond28) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI (cfiCond28) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI (cfiCond28) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond28) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond28) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond28) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond28) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond28) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond28) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond28) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond28) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond28) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond28) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond28) CFA_SP SP+0
+        CFI (cfiCond28) CFA_XSP16 add(XSP16, 16)
+        CFI Block cfiCond29 Using cfiCommon0
+        CFI (cfiCond29) NoFunction
+        CFI (cfiCond29) Conditional ??CrossCallReturnLabel_3, ??CrossCallReturnLabel_0
+        CFI (cfiCond29) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond29) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond29) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond29) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond29) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond29) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond29) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond29) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond29) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond29) CFA_SP SP+0
+        CFI (cfiCond29) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond30 Using cfiCommon0
+        CFI (cfiCond30) NoFunction
+        CFI (cfiCond30) Conditional ??CrossCallReturnLabel_3, ??CrossCallReturnLabel_1
+        CFI (cfiCond30) R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI (cfiCond30) VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI (cfiCond30) V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI (cfiCond30) V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI (cfiCond30) V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI (cfiCond30) V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI (cfiCond30) V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond30) V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond30) V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond30) V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond30) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond30) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond30) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond30) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond30) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond30) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond30) CFA_SP SP+0
+        CFI (cfiCond30) CFA_XSP16 add(XSP16, 16)
+        CFI Block cfiPicker31 Using cfiCommon1
+        CFI (cfiPicker31) NoFunction
+        CFI (cfiPicker31) Picker
+        LCALL   ??RainfallInitial?relay
+        ; Setup parameters for call to function RainfallWrite
+        ; Setup parameters for call to function RainfallWrite
+        ; Setup parameters for call to function RainfallWrite
+        ; Setup parameters for call to function RainfallWrite
+        MOV     R1,#-0x34
+        LCALL   ??RainfallWrite?relay
+        RET
+        CFI EndBlock cfiCond27
+        CFI EndBlock cfiCond28
+        CFI EndBlock cfiCond29
+        CFI EndBlock cfiCond30
+        CFI EndBlock cfiPicker31
+//  173 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  174 unsigned char fun(unsigned char *s)
+fun:
+        CFI Block cfiBlock32 Using cfiCommon0
+        CFI Function fun
+        CODE
+//  175 {
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  176 	
+//  177   int i,t;             //t记录临时加的数 
+//  178 	
+//  179   unsigned char sum =0;
+        MOV     R5,#0x0
+//  180 	for(i=0;s[i];i++)
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        SJMP    ??fun_0
+//  181 	
+//  182   {
+//  183 		
+//  184     if(s[i]>='0'&&s[i]<='9')
+??fun_1:
+        ADD     A,#-0x30
+        CLR     C
+        SUBB    A,#0xa
+        JNC     ??fun_2
+//  185 		
+//  186       t=s[i]-'0';       //当字符是0~9时保持原数不变
+        MOVX    A,@DPTR
+        ADD     A,#-0x30
+        MOV     R0,A
+//  187 		
+//  188     if(s[i]>='a'&&s[i]<='z')
+??fun_2:
+        MOVX    A,@DPTR
+        ADD     A,#-0x61
+        CLR     C
+        SUBB    A,#0x1a
+        JNC     ??fun_3
+//  189 		
+//  190       t=s[i]-'a'+10;
+        MOVX    A,@DPTR
+        ADD     A,#-0x57
+        MOV     R0,A
+//  191 		
+//  192     if(s[i]>='A'&&s[i]<='Z')
+??fun_3:
+        MOVX    A,@DPTR
+        ADD     A,#-0x41
+        CLR     C
+        SUBB    A,#0x1a
+        JNC     ??fun_4
+//  193 		
+//  194       t=s[i]-'A'+10;
+        MOVX    A,@DPTR
+        ADD     A,#-0x37
+        MOV     R0,A
+//  195 		
+//  196     sum=sum*16+t;
+??fun_4:
+        MOV     A,R0
+        MOV     R4,A
+        MOV     A,R5
+        SWAP    A
+        ANL     A,#0xf0
+        ADD     A,R4
+        MOV     R5,A
+//  197 	
+//  198   }
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+??fun_0:
+        MOV     A,R2
+        ADD     A,R6
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        JNZ     ??fun_1
+//  199 	
+//  200   return sum;
+        MOV     A,R5
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock32
+//  201  
+//  202 } 
+//  203 /*********************************************************************
+//  204 读雨量浓度函数
+//  205 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  206 uint16 myApp_ReadRainLevel( void )
+myApp_ReadRainLevel:
+        CFI Block cfiBlock33 Using cfiCommon0
+        CFI Function myApp_ReadRainLevel
+        CODE
+//  207 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  208   uint16 reading = 0;
+//  209   
+//  210   /* Enable channel */
+//  211   ADCCFG |= 0x40;
+        ORL     0xf2,#0x40
+//  212   
+//  213   /* writing to this register starts the extra conversion */
+//  214   ADCCON3 = 0x86;// AVDD5 引脚  00： 64 抽取率(7 位ENOB)  0110： AIN6
+        MOV     0xb6,#-0x7a
+//  215   
+//  216   /* Wait for the conversion to be done */
+//  217   while (!(ADCCON1 & 0x80));
+??myApp_ReadRainLevel_0:
+        MOV     A,0xb4
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??myApp_ReadRainLevel_0
+//  218   
+//  219   /* Disable channel after done conversion */
+//  220   ADCCFG &= (0x40 ^ 0xFF); //按位异或。如1010^1111=0101（二进制）
+        ANL     0xf2,#0xbf
+//  221   
+//  222   /* Read the result */
+//  223   reading = ADCL;
+        MOV     A,0xba
+//  224   reading |= (int16) (ADCH << 8); 
+//  225   
+//  226   reading >>= 8;
+//  227   
+//  228   return (reading);
+        MOV     A,0xbb
+        MOV     R2,A
+        CLR     A
+        MOV     R3,A
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock33
+        REQUIRE ADCCFG
+        REQUIRE ADCCON3
+        REQUIRE ADCCON1
+        REQUIRE ADCL
+        REQUIRE ADCH
+//  229 }
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3d800000:
+        DD 3D800000H
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay_us?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay_us
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay_10us?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay_10us
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay_ms?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay_ms
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Delay_s?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Delay_s
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallDelay?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallDelay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallInputInitial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallInputInitial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallOutputInitial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallOutputInitial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallInitial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallInitial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallWrite?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RainfallRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RainfallRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ReadRainfall?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ReadRainfall
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??floatReadRainfall?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    floatReadRainfall
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??fun?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    fun
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??myApp_ReadRainLevel?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    myApp_ReadRainLevel
+
+        END
+// 
+// 604 bytes in segment BANKED_CODE
+//  84 bytes in segment BANK_RELAYS
+//   7 bytes in segment SFR_AN
+//   4 bytes in segment XDATA_ROM_C
+// 
+// 688 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 4 bytes shared)
+//   0 bytes of DATA  memory (+ 7 bytes shared)
+//
+//Errors: none
+//Warnings: none

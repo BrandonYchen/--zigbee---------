@@ -1,0 +1,1089 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         13/Oct/2019  16:31:41 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee Rain 923\Projects\zstack\Utilities\SerialApp\S #
+#                          ource\rainfall.c                                   #
+#    Command line       =  -f "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"  #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"    #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          Source\rainfall.c" -D ZIGBEEPRO -D HAL_UART=TRUE   #
+#                          -D SERIAL_APP_PORT=0 -D LCD_SUPPORTED -D           #
+#                          NV_RESTORE -lC "C:\Users\Administrator\Desktop\zig #
+#                          bee1007\WiFi_ZigBee Rain                           #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\C #
+#                          oordinatorEB-Pro\List\" -lA                        #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\CoordinatorEB-Pro\List\" --diag_suppress  #
+#                          Pe001,Pa010 -o "C:\Users\Administrator\Desktop\zig #
+#                          bee1007\WiFi_ZigBee Rain                           #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\C #
+#                          oordinatorEB-Pro\Obj\" -e --debug --core=plain     #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 8 -I "C:\Users\Administrator\Des #
+#                          ktop\zigbee1007\WiFi_ZigBee Rain                   #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\" #
+#                           -I "C:\Users\Administrator\Desktop\zigbee1007\WiF #
+#                          i_ZigBee Rain 923\Projects\zstack\Utilities\Serial #
+#                          App\CC2530DB\..\SOURCE\" -I                        #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I              #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I         #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\"   #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\C #
+#                          C2530EB\" -I "C:\Users\Administrator\Desktop\zigbe #
+#                          e1007\WiFi_ZigBee Rain 923\Projects\zstack\Utiliti #
+#                          es\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\OS #
+#                          AL\MCU\CCSOC\" -I "C:\Users\Administrator\Desktop\ #
+#                          zigbee1007\WiFi_ZigBee Rain                        #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\. #
+#                          .\..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I         #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\" -I   #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\"    #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\"  #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\"  #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"   #
+#                          -I "C:\Users\Administrator\Desktop\zigbee1007\WiFi #
+#                          _ZigBee Rain 923\Projects\zstack\Utilities\SerialA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I    #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ #
+#                          " -I "C:\Users\Administrator\Desktop\zigbee1007\Wi #
+#                          Fi_ZigBee Rain 923\Projects\zstack\Utilities\Seria #
+#                          lApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\S #
+#                          DATA\" -I "C:\Users\Administrator\Desktop\zigbee10 #
+#                          07\WiFi_ZigBee Rain 923\Projects\zstack\Utilities\ #
+#                          SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\I #
+#                          NCLUDE\" -I "C:\Users\Administrator\Desktop\zigbee #
+#                          1007\WiFi_ZigBee Rain 923\Projects\zstack\Utilitie #
+#                          s\SerialApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC #
+#                          \HIGH_LEVEL\" -I "C:\Users\Administrator\Desktop\z #
+#                          igbee1007\WiFi_ZigBee Rain                         #
+#                          923\Projects\zstack\Utilities\SerialApp\CC2530DB\. #
+#                          .\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I  #
+#                          "C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zi #
+#                          gBee Rain 923\Projects\zstack\Utilities\SerialApp\ #
+#                          CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\s #
+#                          rf04\SINGLE_CHIP\" -Ohz                            #
+#    List file          =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee Rain 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\CoordinatorEB-Pro\List\rainfall.lst        #
+#    Object file        =  C:\Users\Administrator\Desktop\zigbee1007\WiFi_Zig #
+#                          Bee Rain 923\Projects\zstack\Utilities\SerialApp\C #
+#                          C2530DB\CoordinatorEB-Pro\Obj\rainfall.r51         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\zigbee1007\WiFi_ZigBee Rain 923\Projects\zstack\Utilities\SerialApp\Source\rainfall.c
+      1          #include "rainfall.h" 
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb4
+   \   unsigned char volatile __sfr ADCCON1
+   \                     ADCCON1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr ADCCFG
+   \                     ADCCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "OnBoard.h"
+      3          
+      4          #define RainfallIO P0_7       //温度传感器引脚
+      5          //延时函数
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      6          void Delay_us(void) //1 us延时
+   \                     Delay_us:
+      7          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+      8              MicroWait(1);   
+   \   000004                ; Setup parameters for call to function Onboard_wait
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006                REQUIRE ?Subroutine0
+   \   000006                ; // Fall through to label ?Subroutine0
+      9          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ??Onboard_wait?relay
+   \   000005   D083         POP     DPH
+   \   000007   D082         POP     DPL
+   \   000009   02....       LJMP    ?BRET
+     10          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     11          void Delay_10us(void) //10 us延时
+   \                     Delay_10us:
+     12          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     13             MicroWait(10);
+   \   000004                ; Setup parameters for call to function Onboard_wait
+   \   000004   7A0A         MOV     R2,#0xa
+   \   000006   80..         SJMP    ?Subroutine0
+     14          }
+     15          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     16          void Delay_ms(unsigned int Time)//n ms延时
+   \                     Delay_ms:
+     17          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     18            unsigned char i;
+     19            while(Time--)
+   \                     ??Delay_ms_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   1E           DEC     R6
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   6012         JZ      ??Delay_ms_1
+     20            {
+     21              for(i=0;i<100;i++)
+   \   000019   75..64       MOV     ?V0 + 0,#0x64
+     22               Delay_10us();
+   \                     ??Delay_ms_2:
+   \   00001C                ; Setup parameters for call to function Onboard_wait
+   \   00001C   7A0A         MOV     R2,#0xa
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   12....       LCALL   ??Onboard_wait?relay
+   \   000023   15..         DEC     ?V0 + 0
+   \   000025   E5..         MOV     A,?V0 + 0
+   \   000027   60E0         JZ      ??Delay_ms_0
+   \   000029   80F1         SJMP    ??Delay_ms_2
+     23            }
+     24          }
+   \                     ??Delay_ms_1:
+   \   00002B   80..         SJMP    ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     25          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     26          void Delay_s(unsigned int k)
+   \                     Delay_s:
+     27          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   800E         SJMP    ??Delay_s_0
+     28              while(k)
+     29              {
+     30                  Delay_ms(1000);
+   \                     ??Delay_s_1:
+   \   00000A                ; Setup parameters for call to function Delay_ms
+   \   00000A   7AE8         MOV     R2,#-0x18
+   \   00000C   7B03         MOV     R3,#0x3
+   \   00000E   12....       LCALL   ??Delay_ms?relay
+     31                  k--;
+   \   000011   EE           MOV     A,R6
+   \   000012   24FF         ADD     A,#-0x1
+   \   000014   1E           DEC     R6
+   \   000015   EF           MOV     A,R7
+   \   000016   34FF         ADDC    A,#-0x1
+   \                     ??Delay_s_0:
+   \   000018   FF           MOV     R7,A
+     32              }
+   \   000019   EE           MOV     A,R6
+   \   00001A   4F           ORL     A,R7
+   \   00001B   70ED         JNZ     ??Delay_s_1
+     33          }
+   \   00001D   80..         SJMP    ??Subroutine5_0
+     34          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     35          void RainfallDelay(unsigned int k) //时钟频率为32M 
+   \                     RainfallDelay:
+     36          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8008         SJMP    ??RainfallDelay_0
+     37            while (k--) {
+     38              asm("NOP");
+   \                     ??RainfallDelay_1:
+   \   000002   00           NOP
+     39              asm("NOP");
+   \   000003   00           NOP
+     40              asm("NOP");
+   \   000004   00           NOP
+     41              asm("NOP");
+   \   000005   00           NOP
+     42              asm("NOP");
+   \   000006   00           NOP
+     43              asm("NOP");
+   \   000007   00           NOP
+     44              asm("NOP");
+   \   000008   00           NOP
+     45              asm("NOP"); } 
+   \   000009   00           NOP
+   \                     ??RainfallDelay_0:
+   \   00000A   EA           MOV     A,R2
+   \   00000B   F8           MOV     R0,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   F9           MOV     R1,A
+   \   00000E   E8           MOV     A,R0
+   \   00000F   24FF         ADD     A,#-0x1
+   \   000011   1A           DEC     R2
+   \   000012   E9           MOV     A,R1
+   \   000013   34FF         ADDC    A,#-0x1
+   \   000015   FB           MOV     R3,A
+   \   000016   E8           MOV     A,R0
+   \   000017   49           ORL     A,R1
+   \   000018   70E8         JNZ     ??RainfallDelay_1
+     46          }
+   \   00001A   02....       LJMP    ?BRET
+     47          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     48          void RainfallInputInitial(void)//设置端口为输入
+   \                     RainfallInputInitial:
+     49          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     50              P0DIR &= 0x7f;
+   \   000000   53FD7F       ANL     0xfd,#0x7f
+     51          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P0DIR
+     52          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     53          void RainfallOutputInitial(void)//设置端口为输出
+   \                     RainfallOutputInitial:
+     54          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     55              P0DIR |= 0x80;
+   \   000000   43FD80       ORL     0xfd,#0x80
+     56          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P0DIR
+     57          
+     58          //rainfall初始化  初始化成功返回0x00，失败返回0x01
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     59          unsigned char RainfallInitial(void)
+   \                     RainfallInitial:
+     60          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     61              unsigned char Status = 0x00;
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+     62              unsigned int CONT_1 = 0;
+   \   000008   7E00         MOV     R6,#0x0
+   \   00000A   7F00         MOV     R7,#0x0
+     63              unsigned char Flag_1 = 1;
+   \   00000C   75..01       MOV     ?V0 + 1,#0x1
+     64              RainfallOutputInitial();
+   \   00000F   43FD80       ORL     0xfd,#0x80
+     65              RainfallIO = 1;      //DQ复位
+   \   000012   D287         SETB    0x80.7
+     66              RainfallDelay(260);  //稍做延时
+   \   000014                ; Setup parameters for call to function RainfallDelay
+   \   000014   7A04         MOV     R2,#0x4
+   \   000016   7B01         MOV     R3,#0x1
+   \   000018   12....       LCALL   ??RainfallDelay?relay
+     67              RainfallIO = 0;      //单片机将DQ拉低
+   \   00001B   C287         CLR     0x80.7
+     68              RainfallDelay(750);  //精确延时 大于 480us 小于960us
+   \   00001D                ; Setup parameters for call to function RainfallDelay
+   \   00001D   7AEE         MOV     R2,#-0x12
+   \   00001F   7B02         MOV     R3,#0x2
+   \   000021   12....       LCALL   ??Subroutine6_0 & 0xFFFF
+     69              RainfallIO = 1;      //拉高总线
+     70              RainfallInputInitial();//设置IO输入
+   \                     ??CrossCallReturnLabel_7:
+   \   000024   53FD7F       ANL     0xfd,#0x7f
+   \   000027   8021         SJMP    ??RainfallInitial_0
+     71              while((RainfallIO != 0)&&(Flag_1 == 1))//等待rainfall响应，具有防止超时功能
+     72              {                                      //等待约60ms左右
+     73                  CONT_1++;
+   \                     ??RainfallInitial_1:
+   \   000029   EE           MOV     A,R6
+   \   00002A   2401         ADD     A,#0x1
+   \   00002C   0E           INC     R6
+   \   00002D   EF           MOV     A,R7
+   \   00002E   3400         ADDC    A,#0x0
+   \   000030   FF           MOV     R7,A
+     74                  RainfallDelay(10);
+   \   000031                ; Setup parameters for call to function RainfallDelay
+   \   000031   7A0A         MOV     R2,#0xa
+   \   000033   7B00         MOV     R3,#0x0
+   \   000035   12....       LCALL   ??RainfallDelay?relay
+     75                  if(CONT_1 > 8000)Flag_1 = 0;
+   \   000038   C3           CLR     C
+   \   000039   EE           MOV     A,R6
+   \   00003A   9441         SUBB    A,#0x41
+   \   00003C   EF           MOV     A,R7
+   \   00003D   941F         SUBB    A,#0x1f
+   \   00003F   4003         JC      ??RainfallInitial_2
+   \   000041   75..00       MOV     ?V0 + 1,#0x0
+     76                  Status = RainfallIO;
+   \                     ??RainfallInitial_2:
+   \   000044   A287         MOV     C,0x80.7
+   \   000046   E4           CLR     A
+   \   000047   33           RLC     A
+   \   000048   F5..         MOV     ?V0 + 0,A
+     77              }
+   \                     ??RainfallInitial_0:
+   \   00004A   A287         MOV     C,0x80.7
+   \   00004C   5006         JNC     ??RainfallInitial_3
+   \   00004E   E5..         MOV     A,?V0 + 1
+   \   000050   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000052   40D5         JC      ??RainfallInitial_1
+     78              RainfallOutputInitial();
+   \                     ??RainfallInitial_3:
+   \   000054   43FD80       ORL     0xfd,#0x80
+     79              RainfallIO = 1;
+   \   000057   D287         SETB    0x80.7
+     80              RainfallDelay(100);
+   \   000059                ; Setup parameters for call to function RainfallDelay
+   \   000059   7A64         MOV     R2,#0x64
+   \   00005B   7B00         MOV     R3,#0x0
+   \   00005D   12....       LCALL   ??RainfallDelay?relay
+     81              return Status;       //返回初始化状态
+   \   000060   A9..         MOV     R1,?V0 + 0
+   \   000062   7F02         MOV     R7,#0x2
+   \   000064   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000067                REQUIRE _A_P0
+   \   000067                REQUIRE P0DIR
+     82          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   12....       LCALL   ??RainfallDelay?relay
+   \   000003   D287         SETB    0x80.7
+   \   000005   22           RET
+     83          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     84          void RainfallWrite(unsigned char infor)
+   \                     RainfallWrite:
+     85          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+     86              unsigned int i;
+     87              RainfallOutputInitial();
+   \   000007   43FD80       ORL     0xfd,#0x80
+     88              for(i=0;i<8;i++)
+   \   00000A   7E08         MOV     R6,#0x8
+     89              {
+     90                  if((infor & 0x01))
+   \                     ??RainfallWrite_0:
+   \   00000C   EF           MOV     A,R7
+   \   00000D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000F   C287         CLR     0x80.7
+   \   000011   5009         JNC     ??RainfallWrite_1
+     91                  {
+     92                      RainfallIO = 0;
+     93                      RainfallDelay(6);
+   \   000013                ; Setup parameters for call to function RainfallDelay
+   \   000013   7A06         MOV     R2,#0x6
+   \   000015   12....       LCALL   ?Subroutine3 & 0xFFFF
+     94                      RainfallIO = 1;
+     95                      RainfallDelay(50);
+   \                     ??CrossCallReturnLabel_4:
+   \   000018                ; Setup parameters for call to function RainfallDelay
+   \   000018   7A32         MOV     R2,#0x32
+   \   00001A   8007         SJMP    ??RainfallWrite_2
+     96                  }
+     97                  else
+     98                  {
+     99                      RainfallIO = 0;
+    100                      RainfallDelay(50);
+   \                     ??RainfallWrite_1:
+   \   00001C                ; Setup parameters for call to function RainfallDelay
+   \   00001C   7A32         MOV     R2,#0x32
+   \   00001E   12....       LCALL   ?Subroutine3 & 0xFFFF
+    101                      RainfallIO = 1;
+    102                      RainfallDelay(6);
+   \                     ??CrossCallReturnLabel_5:
+   \   000021                ; Setup parameters for call to function RainfallDelay
+   \   000021   7A06         MOV     R2,#0x6
+   \                     ??RainfallWrite_2:
+   \   000023   7B00         MOV     R3,#0x0
+   \   000025   12....       LCALL   ??RainfallDelay?relay
+    103                  }
+    104                  infor >>= 1;
+   \   000028   EF           MOV     A,R7
+   \   000029   C3           CLR     C
+   \   00002A   13           RRC     A
+   \   00002B   FF           MOV     R7,A
+    105              }
+   \   00002C   1E           DEC     R6
+   \   00002D   EE           MOV     A,R6
+   \   00002E   70DC         JNZ     ??RainfallWrite_0
+    106          }
+   \   000030   02....       LJMP    ??Subroutine5_0 & 0xFFFF
+   \   000033                REQUIRE _A_P0
+   \   000033                REQUIRE P0DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002                REQUIRE ??Subroutine6_0
+   \   000002                ; // Fall through to label ??Subroutine6_0
+    107          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F9           MOV     R1,A
+   \   000001                REQUIRE ??Subroutine5_0
+   \   000001                ; // Fall through to label ??Subroutine5_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    108          unsigned char RainfallRead(void)
+   \                     RainfallRead:
+    109          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    110              unsigned char Value = 0x00;
+   \   000005   7E00         MOV     R6,#0x0
+    111              unsigned int i;
+    112              RainfallOutputInitial();
+   \   000007   43FD80       ORL     0xfd,#0x80
+    113              RainfallIO = 1;
+   \   00000A   D287         SETB    0x80.7
+    114              RainfallDelay(10);
+   \   00000C                ; Setup parameters for call to function RainfallDelay
+   \   00000C   7A0A         MOV     R2,#0xa
+   \   00000E   7B00         MOV     R3,#0x0
+   \   000010   12....       LCALL   ??RainfallDelay?relay
+    115              for(i=0;i<8;i++)
+   \   000013   7F08         MOV     R7,#0x8
+    116              {
+    117                  Value >>= 1; 
+   \                     ??RainfallRead_0:
+   \   000015   EE           MOV     A,R6
+   \   000016   C3           CLR     C
+   \   000017   13           RRC     A
+   \   000018   FE           MOV     R6,A
+    118                  RainfallOutputInitial();
+   \   000019   43FD80       ORL     0xfd,#0x80
+    119                  RainfallIO = 0;// 给脉冲信号
+   \   00001C   C287         CLR     0x80.7
+    120                  RainfallDelay(3);
+   \   00001E                ; Setup parameters for call to function RainfallDelay
+   \   00001E   7A03         MOV     R2,#0x3
+   \   000020   12....       LCALL   ?Subroutine3 & 0xFFFF
+    121                  RainfallIO = 1;// 给脉冲信号
+    122                  RainfallDelay(3);
+   \                     ??CrossCallReturnLabel_6:
+   \   000023                ; Setup parameters for call to function RainfallDelay
+   \   000023   7A03         MOV     R2,#0x3
+   \   000025   7B00         MOV     R3,#0x0
+   \   000027   12....       LCALL   ??RainfallDelay?relay
+    123                  RainfallInputInitial();
+   \   00002A   53FD7F       ANL     0xfd,#0x7f
+    124                  if(RainfallIO == 1) Value |= 0x80;
+   \   00002D   A287         MOV     C,0x80.7
+   \   00002F   5004         JNC     ??RainfallRead_1
+   \   000031   EE           MOV     A,R6
+   \   000032   D2E7         SETB    0xE0 /* A   */.7
+   \   000034   FE           MOV     R6,A
+    125                  RainfallDelay(15);
+   \                     ??RainfallRead_1:
+   \   000035                ; Setup parameters for call to function RainfallDelay
+   \   000035   7A0F         MOV     R2,#0xf
+   \   000037   7B00         MOV     R3,#0x0
+   \   000039   12....       LCALL   ??RainfallDelay?relay
+    126              } 
+   \   00003C   1F           DEC     R7
+   \   00003D   EF           MOV     A,R7
+   \   00003E   70D5         JNZ     ??RainfallRead_0
+    127              return Value;
+   \   000040   EE           MOV     A,R6
+   \   000041   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000044                REQUIRE _A_P0
+   \   000044                REQUIRE P0DIR
+    128          }
+    129          
+    130          //温度读取函数
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    131          unsigned char ReadRainfall(void) 
+   \                     ReadRainfall:
+    132          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    133              unsigned char V1,V2;   //定义高低8位 缓冲
+    134              unsigned char temp;    //定义温度缓冲寄存器
+    135              
+    136              RainfallInitial();
+   \   000005                ; Setup parameters for call to function RainfallInitial
+   \   000005   12....       LCALL   ?Subroutine2 & 0xFFFF
+    137              RainfallWrite(0xcc);    // 跳过读序号列号的操作
+    138              RainfallWrite(0x44);    // 启动温度转换
+    139              
+    140              RainfallInitial();
+    141              RainfallWrite(0xcc);    //跳过读序号列号的操作 
+    142              RainfallWrite(0xbe);    //读取温度寄存器等（共可读9个寄存器） 前两个就是温度
+    143              
+    144              V1 = RainfallRead();    //低位
+   \                     ??CrossCallReturnLabel_0:
+   \   000008   FE           MOV     R6,A
+    145              V2 = RainfallRead();    //高位
+    146              temp = ((V1 >> 4)+((V2 & 0x07)*16)); //转换数据 
+    147          
+    148              return temp;
+   \   000009                ; Setup parameters for call to function RainfallRead
+   \   000009   12....       LCALL   ??RainfallRead?relay
+   \   00000C   E9           MOV     A,R1
+   \   00000D   5407         ANL     A,#0x7
+   \   00000F   C4           SWAP    A
+   \   000010   F8           MOV     R0,A
+   \   000011   EE           MOV     A,R6
+   \   000012   C4           SWAP    A
+   \   000013   540F         ANL     A,#0xf
+   \   000015   28           ADD     A,R0
+   \   000016   02....       LJMP    ?Subroutine1 & 0xFFFF
+    149          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003   7944         MOV     R1,#0x44
+   \   000005   12....       LCALL   ??RainfallWrite?relay
+   \   000008                ; Setup parameters for call to function RainfallInitial
+   \   000008                ; Setup parameters for call to function RainfallInitial
+   \   000008   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   00000B                ; Setup parameters for call to function RainfallWrite
+   \   00000B                ; Setup parameters for call to function RainfallWrite
+   \   00000B   79BE         MOV     R1,#-0x42
+   \   00000D   12....       LCALL   ??RainfallWrite?relay
+   \   000010                ; Setup parameters for call to function RainfallRead
+   \   000010                ; Setup parameters for call to function RainfallRead
+   \   000010   12....       LCALL   ??RainfallRead?relay
+   \   000013   E9           MOV     A,R1
+   \   000014   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ??RainfallInitial?relay
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003                ; Setup parameters for call to function RainfallWrite
+   \   000003   79CC         MOV     R1,#-0x34
+   \   000005   12....       LCALL   ??RainfallWrite?relay
+   \   000008   22           RET
+    150          
+    151          //温度读取函数 带1位小数位
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    152          float floatReadRainfall(void) 
+   \                     floatReadRainfall:
+    153          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    154              unsigned char V1,V2;   //定义高低8位 缓冲
+    155              unsigned int temp;     //定义温度缓冲寄存器
+    156              float fValue;
+    157              RainfallInitial();
+   \   000005                ; Setup parameters for call to function RainfallInitial
+   \   000005   12....       LCALL   ?Subroutine2 & 0xFFFF
+    158              RainfallWrite(0xcc);    // 跳过读序号列号的操作
+    159              RainfallWrite(0x44);    // 启动温度转换
+    160              
+    161              RainfallInitial();
+    162              RainfallWrite(0xcc);    //跳过读序号列号的操作 
+    163              RainfallWrite(0xbe);    //读取温度寄存器等（共可读9个寄存器） 前两个就是温度
+    164              
+    165              V1 = RainfallRead();    //低位
+   \                     ??CrossCallReturnLabel_1:
+   \   000008   F5..         MOV     ?V0 + 0,A
+    166              V2 = RainfallRead();    //高位
+    167              //temp = ((V1 >> 4)+((V2 & 0x07)*16)); //转换数据 
+    168              temp=V2*0xFF+V1;
+    169              fValue = temp*0.0625;
+    170              
+    171              return fValue;
+   \   00000A                ; Setup parameters for call to function RainfallRead
+   \   00000A   12....       LCALL   ??RainfallRead?relay
+   \   00000D   E9           MOV     A,R1
+   \   00000E   75F0FF       MOV     B,#-0x1
+   \   000011   A4           MUL     AB
+   \   000012   25..         ADD     A,?V0 + 0
+   \   000014   F5..         MOV     ?V0 + 0,A
+   \   000016   E5F0         MOV     A,B
+   \   000018   3400         ADDC    A,#0x0
+   \   00001A   F5..         MOV     ?V0 + 1,A
+   \   00001C   E4           CLR     A
+   \   00001D   F5..         MOV     ?V0 + 2,A
+   \   00001F   F5..         MOV     ?V0 + 3,A
+   \   000021   78..         MOV     R0,#?V0 + 0
+   \   000023   12....       LCALL   ?UL_TO_FLT
+   \   000026   90....       MOV     DPTR,#__Constant_3d800000
+   \   000029   78..         MOV     R0,#?V0 + 4
+   \   00002B   12....       LCALL   ?L_MOV_X
+   \   00002E   78..         MOV     R0,#?V0 + 0
+   \   000030   79..         MOV     R1,#?V0 + 4
+   \   000032   12....       LCALL   ?FLT_MUL
+   \   000035   AA..         MOV     R2,?V0 + 0
+   \   000037   AB..         MOV     R3,?V0 + 1
+   \   000039   AC..         MOV     R4,?V0 + 2
+   \   00003B   AD..         MOV     R5,?V0 + 3
+   \   00003D   7F08         MOV     R7,#0x8
+   \   00003F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    172          }
+    173          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    174          unsigned char fun(unsigned char *s)
+   \                     fun:
+    175          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    176          	
+    177            int i,t;             //t记录临时加的数 
+    178          	
+    179            unsigned char sum =0;
+   \   000005   7D00         MOV     R5,#0x0
+    180          	for(i=0;s[i];i++)
+   \   000007   7E00         MOV     R6,#0x0
+   \   000009   7F00         MOV     R7,#0x0
+   \   00000B   8033         SJMP    ??fun_0
+    181          	
+    182            {
+    183          		
+    184              if(s[i]>='0'&&s[i]<='9')
+   \                     ??fun_1:
+   \   00000D   24D0         ADD     A,#-0x30
+   \   00000F   C3           CLR     C
+   \   000010   940A         SUBB    A,#0xa
+   \   000012   5004         JNC     ??fun_2
+    185          		
+    186                t=s[i]-'0';       //当字符是0~9时保持原数不变
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   24D0         ADD     A,#-0x30
+   \   000017   F8           MOV     R0,A
+    187          		
+    188              if(s[i]>='a'&&s[i]<='z')
+   \                     ??fun_2:
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   249F         ADD     A,#-0x61
+   \   00001B   C3           CLR     C
+   \   00001C   941A         SUBB    A,#0x1a
+   \   00001E   5004         JNC     ??fun_3
+    189          		
+    190                t=s[i]-'a'+10;
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   24A9         ADD     A,#-0x57
+   \   000023   F8           MOV     R0,A
+    191          		
+    192              if(s[i]>='A'&&s[i]<='Z')
+   \                     ??fun_3:
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   24BF         ADD     A,#-0x41
+   \   000027   C3           CLR     C
+   \   000028   941A         SUBB    A,#0x1a
+   \   00002A   5004         JNC     ??fun_4
+    193          		
+    194                t=s[i]-'A'+10;
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   24C9         ADD     A,#-0x37
+   \   00002F   F8           MOV     R0,A
+    195          		
+    196              sum=sum*16+t;
+   \                     ??fun_4:
+   \   000030   E8           MOV     A,R0
+   \   000031   FC           MOV     R4,A
+   \   000032   ED           MOV     A,R5
+   \   000033   C4           SWAP    A
+   \   000034   54F0         ANL     A,#0xf0
+   \   000036   2C           ADD     A,R4
+   \   000037   FD           MOV     R5,A
+    197          	
+    198            }
+   \   000038   EE           MOV     A,R6
+   \   000039   2401         ADD     A,#0x1
+   \   00003B   0E           INC     R6
+   \   00003C   EF           MOV     A,R7
+   \   00003D   3400         ADDC    A,#0x0
+   \   00003F   FF           MOV     R7,A
+   \                     ??fun_0:
+   \   000040   EA           MOV     A,R2
+   \   000041   2E           ADD     A,R6
+   \   000042   F582         MOV     DPL,A
+   \   000044   EB           MOV     A,R3
+   \   000045   3F           ADDC    A,R7
+   \   000046   F583         MOV     DPH,A
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   70C2         JNZ     ??fun_1
+    199          	
+    200            return sum;
+   \   00004B   ED           MOV     A,R5
+   \   00004C   02....       LJMP    ?Subroutine1 & 0xFFFF
+    201           
+    202          } 
+    203          /*********************************************************************
+    204          读雨量浓度函数
+    205          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    206          uint16 myApp_ReadRainLevel( void )
+   \                     myApp_ReadRainLevel:
+    207          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    208            uint16 reading = 0;
+    209            
+    210            /* Enable channel */
+    211            ADCCFG |= 0x40;
+   \   000000   43F240       ORL     0xf2,#0x40
+    212            
+    213            /* writing to this register starts the extra conversion */
+    214            ADCCON3 = 0x86;// AVDD5 引脚  00： 64 抽取率(7 位ENOB)  0110： AIN6
+   \   000003   75B686       MOV     0xb6,#-0x7a
+    215            
+    216            /* Wait for the conversion to be done */
+    217            while (!(ADCCON1 & 0x80));
+   \                     ??myApp_ReadRainLevel_0:
+   \   000006   E5B4         MOV     A,0xb4
+   \   000008   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00000A   50FA         JNC     ??myApp_ReadRainLevel_0
+    218            
+    219            /* Disable channel after done conversion */
+    220            ADCCFG &= (0x40 ^ 0xFF); //按位异或。如1010^1111=0101（二进制）
+   \   00000C   53F2BF       ANL     0xf2,#0xbf
+    221            
+    222            /* Read the result */
+    223            reading = ADCL;
+   \   00000F   E5BA         MOV     A,0xba
+    224            reading |= (int16) (ADCH << 8); 
+    225            
+    226            reading >>= 8;
+    227            
+    228            return (reading);
+   \   000011   E5BB         MOV     A,0xbb
+   \   000013   FA           MOV     R2,A
+   \   000014   E4           CLR     A
+   \   000015   FB           MOV     R3,A
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE ADCCFG
+   \   000019                REQUIRE ADCCON3
+   \   000019                REQUIRE ADCCON1
+   \   000019                REQUIRE ADCL
+   \   000019                REQUIRE ADCH
+    229          }
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3d800000:
+   \   000000   0000803D     DD 3D800000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_10us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_10us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay_s?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay_s
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallInputInitial?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallInputInitial
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallOutputInitial?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallOutputInitial
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallInitial?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallInitial
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallWrite?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallWrite
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RainfallRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RainfallRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadRainfall?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadRainfall
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??floatReadRainfall?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    floatReadRainfall
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??fun?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    fun
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??myApp_ReadRainLevel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    myApp_ReadRainLevel
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     Delay_10us                2      0      0
+       -> Onboard_wait         4      0      0
+     Delay_ms                  0      0     18
+       -> Onboard_wait         0      0     18
+     Delay_s                   0      0      9
+       -> Delay_ms             0      0     18
+     Delay_us                  2      0      0
+       -> Onboard_wait         4      0      0
+     RainfallDelay             0      0     10
+     RainfallInitial           0      0     26
+       -> RainfallDelay        0      0     20
+       -> RainfallDelay        0      0     20
+       -> RainfallDelay        0      0     20
+       -> RainfallDelay        0      0     20
+     RainfallInputInitial      0      0      0
+     RainfallOutputInitial     0      0      0
+     RainfallRead              0      0     25
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+     RainfallWrite             0      0     25
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+       -> RainfallDelay        0      0     18
+     ReadRainfall              0      0      9
+       -> RainfallInitial      0      0     18
+       -> RainfallWrite        0      0     18
+       -> RainfallWrite        0      0     18
+       -> RainfallInitial      0      0     18
+       -> RainfallWrite        0      0     18
+       -> RainfallWrite        0      0     18
+       -> RainfallRead         0      0     18
+       -> RainfallRead         0      0     18
+     floatReadRainfall         0      0     16
+       -> RainfallInitial      0      0     32
+       -> RainfallWrite        0      0     32
+       -> RainfallWrite        0      0     32
+       -> RainfallInitial      0      0     32
+       -> RainfallWrite        0      0     32
+       -> RainfallWrite        0      0     32
+       -> RainfallRead         0      0     32
+       -> RainfallRead         0      0     32
+     fun                       0      0      9
+     myApp_ReadRainLevel       0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P0                            1
+     ADCCON1                          1
+     ADCCON3                          1
+     ADCL                             1
+     ADCH                             1
+     ADCCFG                           1
+     P0DIR                            1
+     Delay_us                         6
+     ?Subroutine0                    12
+     Delay_10us                       8
+     Delay_ms                        45
+     ??Subroutine5_0                  5
+     Delay_s                         31
+     RainfallDelay                   29
+     RainfallInputInitial             6
+     RainfallOutputInitial            6
+     RainfallInitial                103
+     ??Subroutine6_0                  6
+     RainfallWrite                   51
+     ?Subroutine3                     2
+     ?Subroutine1                     1
+     RainfallRead                    68
+     ReadRainfall                    25
+     ?Subroutine2                    21
+     ?Subroutine4                     9
+     floatReadRainfall               66
+     fun                             79
+     myApp_ReadRainLevel             25
+     __Constant_3d800000              4
+     ??Delay_us?relay                 6
+     ??Delay_10us?relay               6
+     ??Delay_ms?relay                 6
+     ??Delay_s?relay                  6
+     ??RainfallDelay?relay            6
+     ??RainfallInputInitial?relay     6
+     ??RainfallOutputInitial?relay    6
+     ??RainfallInitial?relay          6
+     ??RainfallWrite?relay            6
+     ??RainfallRead?relay             6
+     ??ReadRainfall?relay             6
+     ??floatReadRainfall?relay        6
+     ??fun?relay                      6
+     ??myApp_ReadRainLevel?relay      6
+
+ 
+ 604 bytes in segment BANKED_CODE
+  84 bytes in segment BANK_RELAYS
+   7 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+ 
+ 688 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 7 bytes shared)
+
+Errors: none
+Warnings: none
